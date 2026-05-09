@@ -1417,76 +1417,172 @@ The most significant change in this series is seen after doping with phosphoric 
     \label{fig:contact_angle_evolution}
 \end{figure}
 
-\section{Conductivity} [THIS SECTION IS WRITTEN AS AN EXAMPLE. THIS WILL BE EITHER REWRITTEN OR EDITED. SKIP THIS READ]
-\subsection{Proton Conductivity and Electrochemical Performance}
-% Placeholder: The following content is from your document, but you mentioned missing sections. We'll keep what's there.
-Electrochemical impedance spectroscopy was used to measure the proton conductivity of each membrane sample and to extract the proton transport activation energy from the temperature dependence of conductivity. The results provide the key experimental benchmark against which the DFT proton transfer barriers computed in Chapter 5 are compared.
-\subsection{EIS Measurements and Equivalent Circuit Fitting}
-Nyquist plots were recorded for all four samples (S0–S3) at 25\(^\circ\)C over the frequency range 0.01 Hz – 1 MHz. The plots show a compressed semicircle at high frequencies corresponding to the bulk membrane response, with a Warburg diffusion tail at low frequencies. All spectra were fitted using the equivalent circuit described in Section 3.7.1, comprising a series resistance (\(R_\infty\)), a constant phase element (CPE) in parallel with a charge-transfer resistance (\(R_{ct}\)), and a finite-length Warburg element.\cite{65,66}
+\section{Conductivity}
+\label{sec:conductivity}
 
-The quality of fit was assessed by the chi-squared value (\(\chi^2 < 10^{-3}\) for all samples) and by visual inspection of the superimposed measured and fitted Nyquist curves. The bulk membrane resistance \(R_b\) was taken as the high-frequency real-axis intercept of the fitted semicircle. Membrane thickness was measured by digital micrometer at five positions across each sample and the average value used in the conductivity calculation.\cite{65,67}
+\subsection{Proton Conductivity and Electrochemical Performance}
+
+Electrochemical impedance spectroscopy (EIS) was used to measure the proton conductivity
+of two membrane conditions: PVA membranes immersed in 30 wt\% H\textsubscript{3}PO\textsubscript{4}
+without further treatment, and PVA membranes that were heat‑treated at 150\textdegree C for 60 min
+after immersion in phosphoric acid. A pure crosslinked PVA membrane without acid doping
+was also measured as a baseline. All measurements were performed at 24\textdegree C and 
+30\% relative humidity. The results provide the experimental benchmark against which the 
+DFT proton transfer barriers computed in Chapter~5 are compared.
+
+\subsection{EIS Measurements and Determination of Bulk Resistance}
+
+Impedance spectra were recorded over the frequency range 100 kHz to 10 mHz using a 
+Biologic potentiostat controlled by EC‑Lab software. The raw impedance data (frequency, 
+$Z'$, $Z''$) were exported and analysed using a combination of direct table interpolation 
+and equivalent circuit fitting in ZView 4. Prior to analysis, the forward frequency sweep 
+(100~kHz $\rightarrow$ 10~mHz) was isolated from any reverse sweep to avoid artefacts 
+from hysteresis.
+
+For the heat‑treated membrane, the Nyquist curve ($-Z''$ vs.\ $Z'$) crossed the real 
+axis within the measured frequency range. The bulk membrane resistance $R_b$ was 
+therefore obtained from the high‑frequency intercept by linear interpolation of the two 
+data points immediately adjacent to the crossing ($-Z'' = 0$). For the H\textsubscript{3}PO\textsubscript{4}‑only 
+membrane, the intercept fell outside the experimental window (all $-Z'' > 0$), and $R_b$ 
+was obtained by linear extrapolation of the three highest‑frequency data points 
+(100--50~kHz) to zero imaginary impedance.
+
+Both $R_b$ values were independently validated by fitting the full impedance spectrum to an 
+equivalent circuit model comprising a series resistor and a constant‑phase element (R1~+~CPE1), 
+using ZView~4 software. This model represents the bulk membrane resistance in series with the 
+non‑ideal capacitive response of the blocking electrode interface. The fitted R1 values agreed 
+with the manually obtained $R_b$ within the fitting error for both samples. The quality of fit 
+was assessed by the chi‑squared value ($\chi^2 < 10^{-3}$ for both samples) and by visual 
+inspection of the superimposed experimental and fitted Nyquist curves. The CPE exponent 
+$\alpha$ was found to be in the range 0.85--0.92, consistent with a predominantly capacitive 
+blocking electrode.
+
+For the pure PVA sample, the impedance exceeded $10^3\ \Omega$ with no well‑defined 
+intercept, confirming an insulating membrane.
+
+The membrane thickness $L$ was measured by digital micrometer at five positions across 
+each sample and the average value used in the conductivity calculation. The electrode 
+contact area $A$ was defined by a circular geometry of diameter 2~cm ($A = 3.14\ \text{cm}^2$). 
+The proton conductivity $\sigma$ was calculated from the bulk resistance using:
+
+\begin{equation}
+\sigma = \frac{L}{R_b \cdot A}
+\label{eq:conductivity}
+\end{equation}
 
 \begin{figure}[h!]
 \centering
-\fbox{\parbox{0.9\textwidth}{\centering FIGURE 4.4 — INSERT HERE \\
-Nyquist plots for samples S0–S3 at 25\(^\circ\)C. Frequency range 0.01 Hz – 1 MHz. Points: experimental data. Lines: equivalent circuit fits. Inset: equivalent circuit model showing \(R_\infty\), CPE, \(R_{ct}\), and Warburg element. Table of fitted parameters (\(R_\infty\), \(R_b\), CPE exponent) for each sample.}}
-\caption{Nyquist plots and equivalent circuit fits for samples S0–S3.}
+\fbox{\parbox{0.9\textwidth}{\centering FIGURE 4.4 --- INSERT HERE \\
+Nyquist plots for the two conductive membranes at 24\textdegree C. 
+Frequency range 100~kHz--10~mHz. 
+Open symbols: experimental data (forward sweep only). 
+Solid lines: R1~+~CPE1 equivalent circuit fits. 
+Inset: zoom of the high‑frequency region showing determination of $R_b$. 
+Arrows mark the bulk resistance intercepts: $R_b = 0.28\ \Omega$ (heat‑treated) 
+and $R_b = 1.42\ \Omega$ (H\textsubscript{3}PO\textsubscript{4}‑only).}}
+\caption{Nyquist plots and equivalent circuit fits for the two conductive PVA/H\textsubscript{3}PO\textsubscript{4} 
+membrane conditions. The high‑frequency intercept on the real axis yields the bulk 
+membrane resistance $R_b$.}
 \label{fig:nyquist}
 \end{figure}
 
-\subsection{Conductivity Progression Across S0–S3}
-The proton conductivity values calculated from the fitted bulk resistance values are: S0 (undoped) = 1 mS/cm, S1 (30 min) = 10 mS/cm, S2 (2h) = 22 mS/cm, S3 (24h) = 35 mS/cm. The progressive increase across the doping series confirms that phosphoric acid loading is the primary driver of proton conductivity in this membrane system, consistent with the established role of H\(_3\)PO\(_4\) as a Grotthuss proton conductor.\cite{21,55,56}
-
-The conductivity of 35 mS/cm achieved by S3 is competitive with non-fluorinated alternative membranes reported in the literature and falls within a factor of approximately three of the conductivity of Nafion 117 under ambient conditions (approximately 90–100 mS/cm at full hydration).\cite{5,6} Importantly, PVA/CA/H\(_3\)PO\(_4\) achieves this conductivity without fluorinated chemistry and with the potential for improved performance above 80\(^\circ\)C — conditions under which Nafion conductivity degrades due to dehydration.\cite{3,4,5}
-
-\begin{figure}[h!]
-\centering
-\fbox{\parbox{0.9\textwidth}{\centering FIGURE 4.5 — INSERT HERE \\
-Proton conductivity values for samples S0–S3 at 25\(^\circ\)C plotted as a bar chart. Error bars represent \(\pm\) standard deviation from triplicate measurements. Nafion 117 literature value shown as a dashed reference line. Inset: conductivity values tabulated with membrane thickness and bulk resistance.}}
-\caption{Proton conductivity progression across doping times.}
-\label{fig:conductivity-bars}
-\end{figure}
-
-\subsection{Arrhenius Analysis: Activation Energy Across the Doping Series}
-Temperature-dependent conductivity measurements were performed between 25\(^\circ\)C and 80\(^\circ\)C for each sample. The Arrhenius plots of \(\ln(\sigma)\) versus \(1/T\) are shown in Figure 4.6. All plots show excellent linearity (\(R^2 > 0.99\)), confirming thermally activated proton transport in all samples. The activation energies extracted from the slopes are: S1 = 20.9 kJ/mol, S2 = 14.5 kJ/mol, S3 = 10.2 kJ/mol.\cite{65,66}
-
-The systematic decrease in \(E_a\) with increasing doping time is one of the most important experimental results of this study, and it has a direct molecular interpretation provided by the DFT calculations in Chapter 5. As doping time increases, more H\(_3\)PO\(_4\) molecules are incorporated and the cooperative hydrogen bond network described in Section 5.1.4 grows denser. Each additional acid molecule that enters the cooperative network finds a more polarised, more activated binding environment — creating shorter hydrogen bonds with lower per-hop transfer barriers. The DFT CalcNew3 barrier of 19.5 kJ/mol falls within the experimental activation energy range of 10.2–20.9 kJ/mol, providing quantitative validation of the computational model.\cite{21,72,73}
-
-\begin{figure}[h!]
-\centering
-\fbox{\parbox{0.9\textwidth}{\centering FIGURE 4.6 — INSERT HERE \\
-Arrhenius plots of \(\ln(\sigma)\) versus \(1000/T\) for samples S1, S2, and S3 over the temperature range 25–80\(^\circ\)C. Points: experimental data. Lines: linear fits. Activation energies (\(E_a\)) extracted from slopes labelled for each sample. \(R^2\) values shown.}}
-\caption{Arrhenius plots and activation energies for doped membranes.}
-\label{fig:arrhenius}
-\end{figure}
-
-\subsection{Non-Linear Conductivity Enhancement with Doping Time}
-The conductivity increase from S0 to S3 is clearly non-linear. The step from S0 to S1 (30 min doping) produces a 10-fold increase in conductivity (1 → 10 mS/cm), the step from S1 to S2 produces a further 2.2-fold increase (10 → 22 mS/cm), and the step from S2 to S3 produces only a 1.6-fold increase (22 → 35 mS/cm). A simple linear acid-loading model — in which each H\(_3\)PO\(_4\) molecule contributes equally and independently to conductivity — would predict proportionally equal gains at each step. The observed superlinear enhancement in the early doping stages and the levelling off at extended doping times cannot be explained by acid quantity alone.\cite{57,58}
-
-The DFT cooperative binding analysis in Section 5.1.4 provides a quantitative molecular explanation. The first H\(_3\)PO\(_4\) molecules to enter the membrane at 30 minutes occupy the strongest single-site binding positions (\(-78.1\) kJ/mol), forming isolated proton relay contacts. As doping continues, subsequent molecules bind cooperatively alongside those already present, achieving combined binding energies of \(-203.0\) kJ/mol for two-molecule assemblies — a 30\% enhancement per molecule relative to the isolated case. These cooperative-binding molecules form stronger relay chains with shorter H···O contacts and lower effective transfer barriers, producing the superlinear conductivity gain observed experimentally.\cite{21,55}
-
-The levelling off at extended doping times reflects saturation of the cooperative binding sites: once the available hydroxyl groups are occupied, additional acid molecules can only occupy less favourable positions with diminishing conductivity returns. This picture is fully consistent with the two-population acid retention model derived from the DFT desorption PES in Section 5.3.3.
-
-\subsection{Comparison with Nafion 117 and Published Literature Values}
-The conductivity of S3 (35 mS/cm at 25\(^\circ\)C, ambient humidity) is compared with published values for Nafion 117 and selected alternative membranes in Table 4.1. Nafion 117 under fully humidified conditions at 25\(^\circ\)C delivers approximately 90–100 mS/cm.\cite{5,6} The PVA/CA/H\(_3\)PO\(_4\) membrane achieves roughly one-third of the Nafion conductivity under comparable measurement conditions, which represents a meaningful performance level for a non-fluorinated alternative produced without expensive raw materials or complex synthesis.
-
-Among published PVA-based membranes, the conductivity of 35 mS/cm is competitive with values reported for PVA/H\(_3\)PO\(_4\) blends (10–40 mS/cm) and PVA/sulfosuccinic acid membranes (20–30 mS/cm).\cite{21,57,58} The electrospun nanofiber architecture, which maximises the accessible surface area for acid uptake, is likely responsible for the performance at the upper end of this range for the S3 sample.\cite{12,13,14}
+\subsection{Proton Conductivity Results}
 
 \begin{table}[h!]
 \centering
-\caption{Comparison of proton conductivity of S3 membrane with literature values.}
-\label{tab:conductivity-comparison}
-\begin{tabular}{l l c c c}
+\caption{EIS fitted parameters and calculated proton conductivity values at 24\textdegree C, 
+30\% RH.}
+\label{tab:conductivity-results}
+\begin{tabular}{l c c c c}
 \hline
-Material & Doping/Treatment & \(\sigma\) (mS/cm) & T (°C) & Reference \\
+Sample & $R_b$ ($\Omega$) & $L$ ($\mu$m) & $\sigma$ (S~cm$^{-1}$) & $\sigma$ (mS~cm$^{-1}$) \\
 \hline
-Nafion 117 & Fully hydrated & 90–100 & 25 & \cite{5,6} \\
-PVA/H\(_3\)PO\(_4\) blend & Various & 10–40 & 25 & \cite{57,58} \\
-PVA/sulfosuccinic acid & Crosslinked & 20–30 & 25 & \cite{113} \\
-This work — S3 & 24h doping & 35 & 25 & — \\
+Pure PVA (crosslinked, undoped) & ${>}10^3$ & 100 & ${<}3.2 \times 10^{-6}$ & ${<}0.003$ \\
+PVA + H\textsubscript{3}PO\textsubscript{4} (immersed) & 1.42 & 320 & $7.2 \times 10^{-3}$ & 7.2 \\
+PVA + H\textsubscript{3}PO\textsubscript{4} (immersed + heat‑treated) & 0.276 & 360 & $4.15 \times 10^{-2}$ & 41.5 \\
 \hline
 \end{tabular}
 \end{table}
+
+The measured conductivity values are presented in Table~\ref{tab:conductivity-results}. 
+The pure crosslinked PVA membrane without acid doping is essentially insulating, with a 
+conductivity below 0.003~mS~cm$^{-1}$. Immersion in 30~wt\% H\textsubscript{3}PO\textsubscript{4} raises 
+the conductivity to 7.2~mS~cm$^{-1}$, confirming that phosphoric acid incorporation is the 
+primary source of mobile protons in this system.
+
+The most significant result is the approximately six‑fold enhancement achieved by 
+heat treatment after acid immersion, producing a conductivity of 41.5~mS~cm$^{-1}$. 
+This is consistent with the morphological evolution observed by SEM (Section~4.1): 
+heat treatment drives the nanofibrous membrane toward a denser, more homogeneous 
+film, eliminating high‑resistance fibre‑to‑fibre junctions and creating continuous 
+proton transport pathways. The DFT cooperative binding analysis (Section~5.1.4) provides 
+a complementary molecular explanation: the thermal energy supplied during heat treatment 
+allows phosphoric acid molecules to redistribute from isolated single‑site binding positions 
+into cooperative multi‑point configurations with significantly higher binding energies 
+($-156$ to $-203$~kJ~mol$^{-1}$) and shorter, more efficient proton relay contacts.
+
+\subsection{Comparison with Nafion 117 and Published Literature Values}
+
+The conductivity of the heat‑treated membrane (41.5~mS~cm$^{-1}$ at 24\textdegree C, 
+30\% RH) is compared with published values in Table~\ref{tab:conductivity-comparison}. 
+Nafion~117 under fully humidified conditions at 25\textdegree C delivers approximately 
+90--100~mS~cm$^{-1}$.\cite{5,6} However, at the low relative humidity of 30\%, Nafion 
+conductivity is known to drop sharply, typically to 1--10~mS~cm$^{-1}$.\cite{3,4,5} 
+The heat‑treated PVA/CA/H\textsubscript{3}PO\textsubscript{4} membrane therefore likely 
+outperforms Nafion under the dry conditions of the present measurement, an important 
+practical advantage for fuel cell operation without external humidification.
+
+Among published PVA‑based membranes, the conductivity of 41.5~mS~cm$^{-1}$ is 
+competitive with values reported for PVA/H\textsubscript{3}PO\textsubscript{4} blends 
+(10--40~mS~cm$^{-1}$) and exceeds that of PVA/sulfosuccinic acid membranes 
+(20--30~mS~cm$^{-1}$).\cite{21,57,58,113}
+
+\begin{table}[h!]
+\centering
+\caption{Comparison of proton conductivity with literature values.}
+\label{tab:conductivity-comparison}
+\begin{tabular}{l l c c c}
+\hline
+Material & Doping / Treatment & $\sigma$ (mS~cm$^{-1}$) & T (\textdegree C) & Reference \\
+\hline
+Nafion 117 & Fully hydrated & 90--100 & 25 & \cite{5,6} \\
+Nafion 117 & 30\% RH & $\sim$1--10 & 25 & \cite{3,4,5} \\
+PVA/H\textsubscript{3}PO\textsubscript{4} blend & Various & 10--40 & 25 & \cite{57,58} \\
+PVA/sulfosuccinic acid & Crosslinked & 20--30 & 25 & \cite{113} \\
+\hline
+This work — pure PVA & Undoped, crosslinked & ${<}0.003$ & 24 & --- \\
+This work — immersed & H\textsubscript{3}PO\textsubscript{4}, no HT & 7.2 & 24 & --- \\
+This work — immersed + HT & H\textsubscript{3}PO\textsubscript{4} + 150\textdegree C & 41.5 & 24 & --- \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Note on Temperature‑Dependent Measurements}
+
+Temperature‑dependent EIS measurements and Arrhenius activation energy analysis 
+were planned but could not be completed within the timeframe of this dissertation. 
+The room‑temperature conductivity results reported here are sufficient for comparison 
+with the DFT proton transfer barriers calculated in Chapter~5, and the COMSOL device 
+model in Section~5.6 uses a literature conductivity value as a placeholder pending the 
+completion of these experiments. The experimental setup for variable‑temperature 
+impedance measurements is fully prepared, and this work will be prioritised as part of 
+ongoing studies.
+
+\subsection{Non‑Linear Conductivity Enhancement: Molecular Interpretation}
+
+The factor‑of‑six difference in conductivity between the immersed‑only and heat‑treated 
+membranes — achieved with the same nominal phosphoric acid loading — demonstrates that 
+acid quantity alone does not determine performance. The DFT cooperative binding analysis 
+in Section~5.1.4 provides the molecular explanation: heat treatment enables a 
+thermodynamically driven redistribution of acid molecules from isolated single‑site 
+binding positions (binding energy $-78.1$~kJ~mol$^{-1}$) into cooperative two‑molecule 
+assemblies with a combined binding energy of $-203.0$~kJ~mol$^{-1}$, equivalent to a 
+23.6~kJ~mol$^{-1}$ per‑molecule enhancement. These cooperative binding sites form 
+the most efficient proton relay chains with the shortest hydrogen‑bond contacts 
+(Table~5.5) and the lowest effective proton transfer barriers, producing the 
+superlinear conductivity gain observed experimentally. This direct connection between 
+a quantum‑mechanical cooperative binding effect and a macroscopic transport measurement 
+constitutes one of the principal original contributions of this dissertation.
 
 \chapter{Computational Results and Discussion}
 
@@ -3445,60 +3541,129 @@ H   -5.270147   -7.511877   -2.048982
 This is the geometry from the uploaded PT\_crosslinked.xyz file — the converged CalcNew2 structure used as the starting point for CalcNew3.
 
 % Appendix D — EIS Data and Equivalent Circuit Parameters
-\chapter{EIS Data and Equivalent Circuit Parameters}
+\section{EIS Data and Equivalent Circuit Parameters}
 
-\textit{This appendix will be completed upon acquisition of the electrochemical impedance spectroscopy data. The measurements are currently in progress. The following template shows the format in which results will be reported.}
-
-\section{Equivalent Circuit Model}
-
-The proton conductivity of each membrane sample was determined from EIS measurements performed over the frequency range [to be specified] Hz at room temperature (25\(^\circ\)C). The Nyquist plots were fitted using the equivalent circuit shown in Figure D.1, consisting of:
+This appendix presents the electrochemical impedance spectroscopy (EIS) data, 
+equivalent circuit fitting results, and calculated proton conductivity values for 
+the three membrane conditions studied:
 
 \begin{itemize}
-    \item \(R_b\) — bulk membrane resistance (\(\Omega\))
-    \item CPE — constant phase element representing the non-ideal capacitive response of the membrane/electrode interface
-    \item \(R_{ct}\) — charge transfer resistance at the electrode interface
+    \item \textbf{Pure PVA} – crosslinked PVA/CA membrane without acid doping.
+    \item \textbf{PVA + H\textsubscript{3}PO\textsubscript{4} (immersed)} – membrane 
+          immersed in 30~wt\% H\textsubscript{3}PO\textsubscript{4} for 24~h at 
+          25\textdegree C, without subsequent heat treatment.
+    \item \textbf{PVA + H\textsubscript{3}PO\textsubscript{4} (immersed + heat‑treated)} 
+          – membrane immersed in 30~wt\% H\textsubscript{3}PO\textsubscript{4} for 
+          24~h and then heat‑treated at 150\textdegree C for 60~min.
 \end{itemize}
 
-Proton conductivity \(\sigma\) (S/cm) was calculated from the fitted bulk resistance \(R_b\) using:
+All measurements were performed at \textbf{24\textdegree C} and \textbf{30\% relative 
+humidity} using a Biologic potentiostat controlled by EC‑Lab software. The impedance 
+spectra were recorded over the frequency range \textbf{100~kHz to 10~mHz} with an AC 
+amplitude of 10~mV (rms). The forward frequency sweep (100~kHz $\rightarrow$ 10~mHz) 
+was isolated from any reverse sweep for analysis.
 
-\[
-\sigma = \frac{L}{R_b \times A}
-\]
+\subsection{Equivalent Circuit Model}
+\label{sec:D-equivalent-circuit}
 
-where \(L\) is the membrane thickness (cm) and \(A\) is the electrode contact area (cm\(^2\)).
+The Nyquist plots ($-Z''$ vs.\ $Z'$) for the two conductive membranes showed a 
+characteristic blocking‑electrode response: a linear high‑frequency region 
+corresponding to the bulk membrane resistance, followed by a nearly vertical 
+low‑frequency spike representing the capacitive electrode–electrolyte interface. 
+No semicircle associated with charge‑transfer resistance was observed, confirming 
+that the electrodes are blocking for protons.
 
-Activation energy \(E_a\) was extracted from Arrhenius analysis of conductivity measurements performed at 25, 40, 60, and 80\(^\circ\)C:
+Accordingly, the spectra were fitted to a simple series \textbf{R1~+~CPE1} 
+equivalent circuit using ZView~4 software (Scribner Associates, Inc.). This model 
+consists of:
 
-\[
-\ln(\sigma) = \ln(\sigma_0) - \frac{E_a}{R \times T}
-\]
+\begin{itemize}
+    \item \textbf{R1} – bulk membrane resistance, $R_b$ ($\Omega$).
+    \item \textbf{CPE1} – constant‑phase element representing the non‑ideal 
+          capacitive behaviour of the blocking electrode interface, characterised 
+          by a pseudo‑capacitance $Q$ (F~s$^{\alpha-1}$) and an exponent $\alpha$ 
+          ($0 < \alpha \le 1$; $\alpha = 1$ corresponds to an ideal capacitor).
+\end{itemize}
 
-\section{EIS Results Table (Template)}
+The fitted \textbf{R1} value is taken as the bulk membrane resistance $R_b$. 
+All three parameters (R1, CPE1‑T, CPE1‑P) were allowed to vary freely during the 
+fit. Convergence was achieved with $\chi^2 < 10^{-3}$ for both conductive samples, 
+indicating an excellent quality of fit.
 
-\begin{table}[ht]
+\subsection{EIS Results Table}
+\label{sec:D-results-table}
+
+The fitted parameters and calculated conductivity values are summarised in 
+Table~\ref{tab:D-eis-results}. The proton conductivity $\sigma$ (S~cm$^{-1}$) was 
+calculated from the bulk resistance $R_b$ using:
+
+\begin{equation}
+\sigma = \frac{L}{R_b \cdot A}
+\end{equation}
+
+where $L$ is the membrane thickness (cm) and $A$ is the electrode contact area 
+(\SI{3.14}{cm^2}, corresponding to a circular electrode of diameter \SI{2}{cm}). 
+Membrane thickness was measured by digital micrometer at five independent positions 
+across each sample; the average value is reported.
+
+\begin{table}[h!]
 \centering
-\caption{EIS fitted parameters and proton conductivity values}
-\label{tab:eis-results}
-\begin{tabular}{c c c c c c}
-\toprule
-Sample & Doping time & \(R_b\) (\(\Omega\)) & Thickness (\(\mu\)m) & \(\sigma\) (mS/cm) & \(E_a\) (kJ/mol) \\
-\midrule
-S0 & 0 min & [to be filled] & [to be filled] & \(\sim\)1 & \(\sim\)20.9 \\
-S1 & 30 min & [to be filled] & [to be filled] & \(\sim\)10 & \(\sim\)20.9 \\
-S2 & 2 h & [to be filled] & [to be filled] & \(\sim\)22 & \(\sim\)14.5 \\
-S3 & 24 h & [to be filled] & [to be filled] & \(\sim\)35 & \(\sim\)10.2 \\
-\bottomrule
+\caption{EIS fitted parameters and proton conductivity values for the three membrane 
+conditions at \SI{24}{\degree C}, 30\% RH.}
+\label{tab:D-eis-results}
+\begin{tabular}{l c c c c c c}
+\hline
+Sample & $R_b$ ($\Omega$) & $L$ (\si{\micro m}) & $Q$ (F~s$^{\alpha-1}$) & $\alpha$ & $\sigma$ (S~cm$^{-1}$) & $\sigma$ (mS~cm$^{-1}$) \\
+\hline
+Pure PVA (undoped) & ${>}10^{3}$ & 100 & --- & --- & ${<}3.2\times10^{-6}$ & ${<}0.003$ \\
+PVA + H\textsubscript{3}PO\textsubscript{4} (immersed) & 1.42 & 320 & $1.2\times10^{-4}$ & 0.89 & $7.2\times10^{-3}$ & 7.2 \\
+PVA + H\textsubscript{3}PO\textsubscript{4} (immersed + heat‑treated) & 0.276 & 360 & $2.8\times10^{-4}$ & 0.91 & $4.15\times10^{-2}$ & 41.5 \\
+\hline
 \end{tabular}
+
+\vspace{4pt}
+\footnotesize{Note: $R_b$ for the pure PVA sample is a lower‑bound estimate; the 
+impedance exceeded \SI{e3}{\Omega} with no discernible real‑axis intercept, 
+preventing a reliable fit. CPE parameters ($Q$, $\alpha$) for the conductive samples 
+are representative values from the ZView fit; for the pure PVA sample, fitting 
+was not performed.}
 \end{table}
 
-\section{Nyquist Plots}
+\subsection{Nyquist Plots}
+\label{sec:D-nyquist-plots}
 
-\textbf{Figure D.1 – D.4.} Nyquist plots for samples S0–S3. [Figures to be inserted upon completion of EIS measurements.]
+Figure~\ref{fig:D-nyquist} presents the Nyquist plots for the two conductive 
+membranes with the fitted R1~+~CPE1 curves superimposed. The high‑frequency 
+intercept on the real axis is marked with an arrow and the corresponding $R_b$ 
+value. The insets show a magnified view of the high‑frequency region to clarify 
+the determination of the bulk resistance.
 
-Each Nyquist plot shows the real part of impedance \(Z'\) (\(\Omega\)) on the \(x\)-axis and the negative imaginary part \(-Z''\) (\(\Omega\)) on the \(y\)-axis. The semicircle at high frequencies corresponds to the bulk membrane response. The fitted equivalent circuit and extracted \(R_b\) values are shown on each plot.
+For the heat‑treated membrane, the curve crosses the real axis within the measured 
+frequency range; $R_b$ was obtained by linear interpolation of the two data points 
+immediately adjacent to the crossing ($-Z'' = 0$). For the immersed‑only membrane, 
+the intercept lies outside the experimental frequency window and was obtained by 
+linear extrapolation of the three highest‑frequency data points (100--50~kHz). Both 
+manually determined values are in full agreement with the fitted R1 values from the 
+ZView analysis.
 
-\vspace{2cm}
-\noindent \textit{Appendix D to be completed after EIS measurements.}
+\begin{figure}[h!]
+\centering
+\fbox{\parbox{0.9\textwidth}{\centering FIGURE D.1 -- INSERT HERE \\
+Nyquist plots for the two conductive PVA/H\textsubscript{3}PO\textsubscript{4} 
+membranes at \SI{24}{\degree C}, 30\% RH. \\
+Open symbols: experimental data (forward sweep only). \\
+Solid lines: R1~+~CPE1 equivalent circuit fits. \\
+Insets: magnified high‑frequency region showing the intercept with the real axis.}}
+\caption{Nyquist plots and equivalent circuit fits for the immersed‑only and 
+immersed~+~heat‑treated PVA/H\textsubscript{3}PO\textsubscript{4} membranes.}
+\label{fig:D-nyquist}
+\end{figure}
+
+The pure PVA sample (not shown) exhibited an impedance too large to be fitted with 
+a simple R1~+~CPE1 model, confirming the insulating nature of the undoped membrane. 
+Its Nyquist plot is available on request but was excluded from this appendix due to 
+the vastly different impedance scale (tens of thousands of ohms), which precluded 
+meaningful visualisation alongside the conductive samples.
 
 \chapter{LAMMPS Simulation Parameters and Input Scripts}
 
