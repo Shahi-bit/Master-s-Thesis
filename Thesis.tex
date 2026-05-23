@@ -121,7 +121,7 @@ Proton Exchange Applications}\par}
 
 
 \begin{abstract}
- Citric-acid crosslinked, phosphoric acid (H$_3$PO$_4$) doped poly(vinyl alcohol) membranes offer inexpensive fluorine-free membranes for proton conducting applications but they can suffer from severe leaching of H$_3$PO$_4$ during hydration that leads to poor long-term performance. Such a limitation is considered here, by conducting an integrative multiscale experimental and computational study. Experimental nanofiber membranes were produced by following needle-based electrospinning and characterized using scanning electron microscopy (SEM), contact angle measurement, Fourier-transform infrared spectroscopy (FTIR-ATR), and thermogravimetric analysis. Material characterization was performed which indicated that $\sim$two-thirds of the irreversible acid originally incorporated using an aqueous medium leaches out of the membrane on exposure to water. To overcome this drawback, we have developed a protocol for thermal-dimension activation after immersion.
+ Citric-acid crosslinked, phosphoric acid (H$_3$PO$_4$) doped poly(vinyl alcohol) membranes offer inexpensive fluorine-free membranes for proton conducting applications but they can suffer from severe leaching of H$_3$PO$_4$ during hydration that leads to poor long-term performance. Such a limitation is considered here, by conducting an integrative multiscale experimental and computational study. Experimental nanofiber membranes were produced by following needle-based electrospinning and characterized using scanning electron microscopy (SEM), contact angle measurement, Fourier-transform infrared spectroscopy (FTIR-ATR), and Electrochemical Impedance Spectroscopy(EIS). Material characterization was performed which indicated that $\sim$two-thirds of the irreversible acid originally incorporated using an aqueous medium leaches out of the membrane on exposure to water. To overcome this drawback, we have developed a protocol for thermal-dimension activation after immersion.
  This treatment was also corroborated using electrochemical impedance spectroscopy, which resulted in a six-fold increase in conductivity: from a submerged-only control of \qty{7.0}{mS.cm^{-1}} to a heat-treated membrane of \qty{41.4}{mS.cm^{-1}}. Density functional theory (DFT) cluster models provided a thermodynamic basis for the macroscopic conductivity increase, showing the switch from discrete, single-site binding (78.1 kJ mol-1)to cooperative two-molecule clusters (203.0 kJ mol-1) to be favorable, stabilized \qty{34}{\%} against displacements via hydration and favoring Grotthuss proton hopping with an extremely low barrier height (\qty{19.5}{kJ.mol^{-1}}). To irreversibly trap the remaining Leachable-Acid fraction, a scheme involving chemical phosphorylation of the membrane was investigated and modeled using high-level DFT, and classic molecular dynamics simulations were performed over 500 ps to evaluate the impact of replacing hydrogen bonds with a covalent phosphate monoester bridge: The hydrogen bond is transformed to a P-O-C phosphate monoester and the desorption energy barrier becomes \qty{+251.9}{kJ.mol^{-1}} at 353.15 K (a 3.3-fold increase) with maintenance of intrinsic P-OH acid activity. 
  In the end, this continuum finite element model built within COMSOL converted atomistic transport properties to macroscopic single cell scale and showed a perfectly linear, ohmic, polarization curve. It can be concluded that this entire approach was able to couple atomistic bonding and fuel cell level engineering, indicating that covalent phosphorylation represents an unambiguous synthetic pathway towards stable alternative proton exchange membranes.
 
@@ -137,7 +137,7 @@ Element Analysis, Grotthuss Mechanism.
 \chapter*{Acknowledgments}
 \addcontentsline{toc}{chapter}{Acknowledgments}
 
-I wish to express my deepest gratitude to my scientific advisor, Prof. Alexey Salimon, for his invaluable guidance, patience, and support throughout this research. I am also thankful to the Department of Physical Chemistry at NUST MISIS for providing laboratory facilities and computational resources. Special thanks to my family and friends for their encouragement.
+I wish to express my deepest gratitude to my scientific advisor, Prof. Alexey Salimon, for his invaluable guidance, patience, and support throughout this research. I am also thankful to the Department of Physical Chemistry at NUST MISIS for providing laboratory facilities. Special thanks to Muhammad Ibrahim, for his invaluable hands-on help and collaboration with all the experimental work, and to my family and friends for their encouragement.
 
 \tableofcontents
 \listoffigures
@@ -275,199 +275,40 @@ ZPE & Zero-Point Energy \\
 
 \chapter{Introduction}
 
-The world currently runs almost entirely on combustion. 
-Whether it is a car engine, a gas turbine, or a coal-fired 
-power plant, the basic chemistry is the same: burn a fuel, 
-release carbon dioxide, capture some fraction of the energy 
-as heat or work. This has worked well enough for two 
-centuries, but the consequences — climate change, urban air 
-pollution, geopolitical dependence on fossil fuel reserves — 
-are now too large to ignore. Replacing combustion with 
-electrochemical conversion is one of the most 
-straightforward paths forward, and hydrogen fuel cells are 
-among the most mature electrochemical technologies available 
-for doing this at scale.\cite{1,2}
+Essentially, the world currently operates almost entirely on combustion. Whether this is an internal combustion engine, a gas turbine, or a coal power station, the fundamental chemistry remains: burn fuel, create carbon dioxide, recover some of the resultant energy as heat or work. This was adequate for the past two centuries but, at this point in time, the side effects-climate change, city air pollution, global dependence on finite fossil fuel reserves-are far too serious. Electrochemical conversion has to replace combustion in one of its various forms and the hydrogen fuel cell is arguably the most advanced technology for this. \cite{1,2}
 
-A hydrogen fuel cell works by splitting the oxidation of 
-hydrogen into two half-reactions at separate electrodes. 
-At the anode, hydrogen releases electrons and becomes 
-protons. The electrons travel through an external circuit, 
-doing electrical work. The protons travel through the 
-membrane to the cathode, where they recombine with oxygen 
-and the electrons to form water. The only byproduct is 
-water vapour. There are no combustion products, no carbon 
-dioxide, no nitrogen oxides. The energy conversion 
-efficiency is not limited by the Carnot cycle the way 
-thermal engines are, which means fuel cells can in 
-principle be significantly more efficient than internal 
-combustion engines operating on the same fuel.\cite{1,2}
+A hydrogen fuel cell involves the separation of oxidation of hydrogen into two half-reactions at two electrodes. Hydrogen at the anode has electrons extracted from it, giving off protons. These electrons pass through the external circuit generating electrical work and also pass to the cathode where together with protons, which have traveled through the membrane, and oxygen it forms water. There are only water vapor emissions. There are no combustion emissions, so no carbon dioxide and no oxides of nitrogen. The energy conversion is not limited by the Carnot cycle the way that thermal engines are, hence theoretically, fuel cells could be substantially more efficient than internal combustion engines for a given fuel\cite{1,2}.
 
-The membrane sitting between the two electrodes is the 
-component that makes or breaks this process. It has to 
-conduct protons quickly — low resistance means low 
-voltage loss — while blocking electrons and preventing 
-the fuel and oxidant gases from mixing. It also has to 
-survive thousands of hours of operation at elevated 
-temperature and humidity without degrading 
-mechanically or chemically. These requirements together 
-define what the membrane science community calls the 
-proton exchange membrane, or PEM.\cite{3,4}
+The heart of this system is the membrane located between the two electrodes. The proton conduction has to be efficient, i.e. Low membrane resistance leads to minimal voltage loss. The membrane must be an electron insulator and it also has to isolate the fuel gas from the oxidant gas. Finally, the membrane must be stable to thermal and humidity conditions at elevated temperatures and pressures, with no chemical degradation for thousands of hours. All these constraints lead to the proton exchange membrane (PEM) which is also known as the proton exchange material. \cite{3,4}
 
-The material that has dominated this field for decades 
-is Nafion, a perfluorosulfonic acid polymer made by 
-DuPont. Nafion conducts protons exceptionally well, 
-exceeding 100~mS\,cm\(^{-1}\) under fully humidified 
-conditions, and its chemical stability in the corrosive 
-fuel cell environment is outstanding.\cite{5,6} The 
-problems with Nafion are not technical — they are 
-economic and environmental. The fluorinated backbone 
-requires a complex multi-step synthesis that pushes 
-production costs above \$800 per square metre. The 
-membrane alone can account for more than 40\% of the 
-total cost of a fuel cell stack.\cite{1,4} Beyond cost, 
-Nafion belongs to the class of per- and polyfluoroalkyl 
-substances, which are persistent environmental 
-contaminants facing increasing regulatory pressure in 
-Europe and North America.\cite{24} And technically, 
-Nafion only performs well below about 80\(^\circ\)C, 
-because its proton conduction depends on liquid water 
-in the membrane channels. Above this temperature the 
-water evaporates and conductivity drops sharply, 
-requiring complex humidification systems that add 
-weight, cost, and failure modes to the 
-stack.\cite{3,4,5}
+The dominant material that has existed in this field for several decades is Nafion; it is a perfluorosulphonic acid polymer manufactured by DuPont. It has excellent proton conduction abilities (over 100~mS\,cm\(^{-1}\) fully humidified) and high chemical stability to tolerate the corrosive atmosphere in fuel cells, \cite{5,6}. However Nafion is not technically challenging, but rather costly and environmentally hazardous; its production costs are greater than \$800 per square metre due to its complex multi-step synthesis of a fluorinated backbone. It represents over 40\% of the total cost of a fuel cell stack, \cite{1,4}.Besides cost, Nafion is a member of the class of per-and polyfluoroalkyl substances, which are a long-lived class of environmental contaminants and an increasing target of legislation both in Europe and North America.\cite{24} Additionally, Nafion performs poorly at anything above about 80\(^\circ\)C since it is mediated by liquid water within its channels and upon evaporation of the water above that temperature its conductivity declines rapidly, forcing complicated humidification apparatus to increase its weight, cost and failure points.\cite{3,4,5}
 
-These limitations have driven two decades of research 
-into alternative membrane materials built from cheaper, 
-more accessible polymers. The ideal alternative would 
-match Nafion's conductivity, survive at higher 
-temperatures without humidification, cost a fraction 
-of the price, and be made without halogens. No single 
-material has yet achieved all of this simultaneously, 
-but several directions have shown genuine promise. 
-Polybenzimidazole doped with phosphoric acid works well 
-above 100\(^\circ\)C without humidification, but PBI 
-itself is expensive and difficult to process.\cite{20} 
-Sulfonated polyetheretherketone has reasonable 
-conductivity and is cheaper than Nafion, but its 
-mechanical properties degrade with increasing sulfonation 
-degree.\cite{18,19} Poly(vinyl alcohol) occupies a 
-different point in this design space: it is cheap, 
-biodegradable, easy to process from water solution, 
-and already produced industrially in large quantities 
-for unrelated applications.\cite{9,10}
+This limitation has resulted in twenty years of development for new alternative membranes made from cheaper and more available polymers. The aim is for an alternative that has similar conductivity to Nafion, can operate above 100°C without humidification, and has a cost that is a fraction of that of Nafion and is prepared without halogens. Not all of these conditions have yet been achieved with one material, but some areas are beginning to demonstrate realistic potential. PBI doped with phosphoric acid operates successfully above 100\(^\circ\)C without humidification but pure PBI is expensive and hard to process.\cite{20} 
+Reasonable conductivity, and significantly lower cost than Nafion can be obtained with sulfonated polyetheretherketone, although increasing degree of sulfonation is associated with poor mechanical performance.\cite{18,19} Poly(vinyl alcohol) stands in a different region of design space: it is cheap, biodegradable, processed from water solution with good processability, and mass produced for other applications.\cite{9,10}
 
-Poly(vinyl alcohol) by itself is not useful as a fuel 
-cell membrane. Its chain carries a hydroxyl group on 
-almost every backbone carbon, which makes it completely 
-water-soluble — the membrane would simply dissolve. 
-The standard engineering fix is crosslinking, and citric 
-acid is one of the most attractive crosslinkers available 
-because it is non-toxic, derived from renewable feedstocks, 
-and reacts with PVA hydroxyls by simple esterification 
-at 150\(^\circ\)C without any catalyst or solvent.\cite{50,51} 
-The three carboxyl groups on citric acid allow it to 
-bridge multiple polymer chains simultaneously, building 
-a three-dimensional covalent network that resists 
-dissolution without requiring any harsh 
-chemistry.\cite{48,53} Once the crosslinked film is 
-stable in water, phosphoric acid can be loaded into 
-it by immersion. Phosphoric acid is an effective proton 
-conductor even without liquid water present, which 
-is why it is also the dopant of choice for 
-polybenzimidazole membranes.\cite{21,55} The resulting 
-PVA/CA/H\(_3\)PO\(_4\) membrane combines a cheap 
-hydroxyl-rich polymer, a green crosslinker, and a 
-well-established proton carrier into a system that 
-has reported conductivities of 10--50~mS\,cm\(^{-1}\) 
-with thermal stability approaching 
-200\(^\circ\)C.\cite{9,12,13}
+As such PVA alone cannot be employed as fuel cell membrane. With a hydroxyl group on practically every backbone carbon the PVA chain is infinitely water soluble, and the membrane will not form. The conventional method of engineer is to cross-link the PVA; citric acid is one of the more appealing crosslinkers since it is non-toxic and renewably based; citric acid is a hydroxyl reactive compound and can readily undergo esterification with PVA hydroxyls, no catalyst or solvent is necessary and temperatures around 150°C can be used to facilitate the reaction.\cite{50,51} 
+The three carboxyl groups enable citric acid to act as a multi-chain polymer connector creating a covalent 3D network resistant to dissolution by any chemical means.\cite{48,53} Upon stabilization of the crosslinked film in water the membrane is then loaded with phosphoric acid by soaking in the acid. Phosphoric acid functions effectively as a proton conductor in the absence of free liquid water, for this reason it has also been chosen as the dopant for polybenzimidazole membranes.\cite{21,55} 
+This combination of a low-cost and highly hydroxylated polymer (PVA), an environment friendly cross-linking agent (CA), and a proton conductor already developed (H\(3\)PO\(4\)) into one system exhibits the conductivities of 10-50 mS cm\(^{-1}\) at thermal stability up to 200\(^\circ\)C.\cite{9,12,13}
 
-Fabricating these membranes by electrospinning rather 
-than solution casting adds another useful dimension. 
-Electrospinning draws a polymer solution through a 
-charged needle into fibres with diameters in the 
-range of hundreds of nanometres to a few micrometres, 
-depositing them as a mat on a grounded 
-collector.\cite{37,38} The resulting membrane has a 
-very high surface area relative to its volume, which 
-maximises the number of accessible hydroxyl groups 
-for acid uptake and creates short diffusion paths 
-for protons moving through the 
-membrane.\cite{40,41,42} The nanofibrous architecture 
-also changes how the membrane responds to doping: 
-as the fibres absorb acid and swell, they merge 
-progressively into a denser structure, and this 
-morphological evolution can be monitored directly 
-by scanning electron microscopy and correlated with 
-conductivity changes measured by electrochemical 
-impedance spectroscopy.\cite{39,52}
+There are further applications associated with producing these membranes via electrospinning instead of by solution casting. In electrospinning, a polymer solution is forced through a charged needle and a solution into the fibers with an average diameter ranging from several hundred nanometers to a couple of micrometers, which then form a mat on a grounded collector\cite{37,38}.
+The membrane produced therefore possesses a huge area relative to its volume in order to provide maximum available hydroxyl groups for the uptake of the acid and to provide short diffusion pathways for the protons to move through the membrane.\cite{40,41,42}
+ The nanofibrous structure also affects the doping response: due to the absorption and swelling of the fibers as they are doped with acid, their progressive merge into a more dense material structure can be directly observed with a scanning electron microscope and correlated with the change in conductivity detected through an electrochemical impedance spectroscopy measurement.\cite{39,52}
 
-Despite the practical interest in PVA/CA/H\(_3\)PO\(_4\) 
-membranes, three important questions about how they 
-work at the molecular level have not been answered. 
-The first is why conductivity increases non-linearly 
-with doping time — a 30-minute immersion in phosphoric 
-acid raises conductivity roughly tenfold, but 
-extending to 24 hours only adds another factor of 
-three. If each acid molecule contributed independently 
-and equally, the relationship would be linear. It is 
-not, and no molecular explanation has been 
-offered.\cite{16,17} The second question is whether 
-protons move by the Grotthuss mechanism — hopping 
-along pre-arranged chains of hydrogen bonds without 
-the acid molecule itself moving — or by the vehicular 
-mechanism, where the proton rides the acid molecule 
-across the membrane by diffusion. These two mechanisms 
-have very different implications for how the membrane 
-should be designed, but distinguishing them 
-experimentally in a complex crosslinked polymer matrix 
-is difficult.\cite{16,17} The third question is why 
+Although PVA/CA/H\(_3\)PO\(_4\) membranes have technological relevance three fundamental questions concerning molecular mechanisms remains unanswered. One question that has not yet been solved is why conductivity increases non-linearly with doping time. A 30 min soak in phosphoric acid increases conductivity by a factor of 10 but doping up to 24 hours only increased it further by a factor of three. The relationship is linear if each phosphate molecule affects conductivity by a separate identical amount. However, this does not explain the observed relationship and no mechanistic reasoning is put forward.\cite{16,17}Secondly, does the proton transfer occur via the Grotthuss mechanism-where the proton jumps between the fixed chains of H-bonds in a pre-ordered structure, and the acid molecule does not diffuse through the membrane-or via the vehicular mechanism where the proton essentially travels through the membrane with the aid of the acid molecule's diffusion? The consequences of these mechanisms for the designing of the membrane are drastically different, however in a complex cross-linked polymer network they are experimentally very difficult to differentiate.\cite{16,17}The third question we pose is how 
 only about 34\% of the incorporated phosphoric acid 
-survives aqueous washing. The acid goes in, but most 
-of it comes back out. Some fraction stays, and for 
-years this fraction has simply been measured and 
-reported without any molecular explanation for why 
-it is 34\% and not 10\% or 
-90\%.\cite{35,52}
+survives water washing. The acid enters, but most of 
+the acid leaves. There's a portion left over, and this 
+portion, has been reported for many years without any 
+explanation at a molecular level, as to why 34\% of it 
+and not 10\% or 
+90\% remains.\cite{35,52}
 
-Bulk experimental measurements cannot resolve these 
-questions. Proton transfer happens in femtoseconds 
-over distances of a few ångströms — far below what 
-any macroscopic measurement can observe. Binding 
-energies, transfer barriers, and electronic structure 
-changes require quantum-mechanical calculations. DFT 
-has already provided these insights for Nafion and 
-polybenzimidazole, where calculations explained 
-hydration-dependent conductivity and quantified 
-proton transfer barriers that matched experimental 
-activation energies.\cite{18,19} No such study existed 
+There is no information which these experimental measurements on a macroscopic level can answer about these aspects. Proton transfer events take place on femtosecond times and within distance scales of a few Ångström, neither of which can be studied on a macroscopic level. Quantum-mechanical calculations are necessary to determine binding energies, transfer barriers and electronic structure changes. DFT has already successfully calculated these for Nafion and polybenzimidazole where the computations accounted for hydrational control of conductivity and calculated proton transfer barrier energies which correlated to experimental activation energies.\cite{18,19} No such study existed 
 for PVA/CA/H\(_3\)PO\(_4\) before this work.
 
-This dissertation fills that gap. It combines 
-electrospinning fabrication and experimental 
-characterisation of PVA/CA/H\(_3\)PO\(_4\) membranes 
-with 31 DFT calculations at B3LYP-D3BJ/6-31G* using 
-ORCA~6.1.1.\cite{20,21} The first 23 calculations 
-establish the molecular mechanisms of the 
-experimentally fabricated system, answering all three 
-questions above. The remaining eight calculations 
-extend the work in a direction the experiments alone 
-identified as necessary: they ask whether replacing 
-the hydrogen bond between phosphoric acid and PVA 
-with a covalent P--O--C phosphate ester linkage would 
-fix the leaching problem without hurting conductivity, 
-and they find that it would. Classical molecular 
-dynamics at 353.15~K using LAMMPS validates the 
-structural stability of the covalently bound 
-phosphate groups dynamically, and a COMSOL 
-Multiphysics finite element model connects the 
-molecular-level transport properties to device-scale 
-polarisation behaviour. Together these components 
-form a three-tier computational framework — DFT, 
-MD, and FEA — that bridges atomic bonding chemistry 
-and fuel cell engineering for this class of 
-alternative membrane material.\cite{18,19}
+This dissertation bridges that gap. In here, electrospinning fabrication and experimental characterization of PVA/CA/H\(3\)PO\(4\) membranes are merged with 31 DFT calculations at B3LYP-D3BJ/6-31G* level of theory using ORCA 6.1.1.\cite{20,21}
+ The first 23 calculations determine the molecular mechanisms of the experimentally manufactured system, which answer all three of the above questions. The latter eight calculations serve to explore in a direction that was made apparent by the experiment alone. That is, do the aforementioned problems go away if we swap the phosphoric acid to PVA hydrogen bond with a covalent P-O-C phosphate ester bond, and would conductivity be affected?
+The covalently bound phosphate groups are dynamically confirmed as being structurally stable with a classical molecular dynamics at 353.15~K conducted using LAMMPS, which coupled to a COMSOL Multiphysics finite element model relates the transport characteristics at a molecular scale to device scale polarization behavior constitutes a three-tiered simulation structure; DFT, MD, and FEA, that span atom-scale bonding chemistry to fuel cell engineering for this type of alternate membrane material.\cite{18,19}
 
 \chapter{Literature Review}
 
@@ -790,7 +631,7 @@ To create a typical 50 g precursor solution, 4.5 g of PVA powder is accurately m
 
 
 \subsection{Dissolution Kinetics}
-The dissolution was carried out by employing a BIOSAN MSH300 magnetic stirrer with a heat source, as depicted in Figure 3.2.
+The dissolution was carried out by employing a BIOSAN MSH300 magnetic stirrer with a heat source.
 
 Steps:
 \begin{itemize}
@@ -1156,86 +997,25 @@ necessary next step for validation.
 
 \subsubsection{Force Field and System Construction}
 
-Classical molecular dynamics simulations were performed using LAMMPS 
-(Large-scale Atomic/Massively Parallel Simulator, version 29 September 
-2021) \cite{104}. The simulation system was built directly 
-from the DFT-optimised Calc07 geometry --- a 52-atom crosslinked 
-membrane fragment comprising two PVA monomers, a citric acid 
-crosslinker, and two covalently bound phosphate groups --- so that 
-the MD starting structure was fully consistent with the quantum 
-mechanical reference. All membrane atoms were described by the 
-OPLS-AA (Optimised Potentials for Liquid Simulations, All-Atom) force 
-field \cite{95}. Atom types were assigned from the DFT 
-connectivity analysis: alkyl CH carbons as opls\_135/137, bridging 
-phosphate oxygen as opls\_480, phosphorus as opls\_479, P\(=\)O oxygen 
-as opls\_481, P--OH oxygen as opls\_482, ester carbonyl carbon as 
-opls\_235, and ester C\(=\)O oxygen as opls\_236. Water was represented 
-by the SPC/E model \cite{107}, which reproduces the 
-self-diffusion coefficient and dielectric constant of liquid water 
-accurately at 353 K. One hundred and fifty SPC/E water molecules were 
-placed randomly in the simulation box with a minimum separation of 
-2.5~\AA{} from any existing atom, yielding a total system of 547 atoms 
-in a cubic periodic box of edge length 50.54~\AA{}. The pair 
-interaction cutoff was set to 6.0~\AA{}, satisfying the requirement 
-that the cutoff must not exceed half the box length to avoid periodic 
-self-interaction.
+Classical molecular dynamics (MD) simulations were conducted with LAMMPS(Large-scale Atomic/Massively Parallel Simulator, 29 September 2021) \cite{104}. The simulation box was constructed directly from the DFT optimized Calc07 geometry – a 52-atom cross-linked membrane consisting of 2 PVA monomers, a citric acid cross-linker, and 2 attached phosphate groups so that the MD starting structure completely agrees with the quantum mechanics reference. The force-field used for the membrane atoms was OPLS-AA(Optimised Potentials for Liquid Simulations, All-Atom) \cite{95}. The atom type was assigned according to the DFT connectivity calculation: the alkyl CH carbons as opls 135/137, the bridging oxygen of the phosphate groups as opls 480, the phosphorus atom as opls 479, the P(=O) oxygen as opls 481, the P--OH oxygen as opls 482, the carbonyl carbon of ester group as opls 235, the carbonyl oxygen of ester group as opls\_236, and the water was modeled using SPC/E model.\cite{107}, reproduces correctly self-diffusion coefficient and dielectric constant of liquid water at 353 K. 150 SPC/E water molecules were arranged randomly in the simulation box with the minimum distance 2.5~Å between any atoms to achieve a system of 547 atoms within a cubic periodic box of side 50.54~\AA{}. The pair interaction cutoff distance was set to 6.0~\AA{}, fulfilling the criterion that cutoff should be less than half the box length to eliminate periodic self-interaction.
 
 \subsubsection{Force Field Validation}
 
-Before any dynamics, the system was energy-minimised and the resulting 
-bond lengths were compared against DFT reference values from Calc01 
-(B3LYP-D3BJ/6-31G*/ORCA~6.1.1). The P--O--C bridge bond length 
-converged to 1.623~\AA{} (DFT: 1.612~\AA{}, deviation $+0.7$\%), 
-C--O--P carbon-side bond to 1.441~\AA{} (DFT: 1.465~\AA{}, 
-$-1.6$\%), P\(=\)O to 1.480~\AA{} (DFT: 1.475~\AA{}, $+0.3$\%), 
-and O--H phosphate to 0.967~\AA{} (DFT: 0.972~\AA{}, $-0.5$\%). 
-All deviations fall within the accepted \(\pm\)0.05~\AA{} threshold 
-for OPLS-AA validation \cite{95}, confirming that the 
-force field faithfully represents the covalent P--O--C architecture 
-established by DFT.
+Before any dynamics were performed the system was minimised and bond lengths compared to DFT reference values calculated using Calc01 (B3LYP-D3BJ/6-31G*/ORCA~6.1.1). The P--O--C bridge bond length converged to 1.623~\AA{} (DFT: 1.612~\AA{}, $+0.7$\%), the C--O--P carbon side bond length to 1.441~\AA{} (DFT: 1.465~\AA{}, $-1.6$\%), the P\(=\)O to 1.480~\AA{} (DFT: 1.475~\AA{}, $+0.3$\%), the phosphate O--H bond to 0.967~\AA{} (DFT: 0.972~\AA{}, $-0.5$\%). All bond lengths are within \(\pm\)0.05~\AA{} threshold expected for validation of OPLS-AA\cite{95} therefore verifying that the force field faithfully represents the DFT predicted covalent P--O--C structure.
 
 \subsubsection{Equilibration and Production Protocol}
 
-The system was equilibrated through five sequential NVT stages using 
-a Nos\'{e}--Hoover thermostat with an additional velocity rescaling 
-fix (temp/rescale) applied every 10--100 steps to prevent kinetic 
-energy explosions during heating: 1~K to 10~K at 0.1~fs timestep 
-over 10~ps; 10~K to 50~K at 0.2~fs over 10~ps; 50~K to 150~K at 
-0.5~fs over 25~ps; 150~K to 353.15~K at 1.0~fs over 50~ps; and a 
-final hold at 353.15~K for 100~ps. This staged heating protocol 
-is necessary for polymer systems where large velocity gradients 
-at the start of dynamics can destabilise intramolecular bond 
-interactions \cite{104}. Following equilibration, a 
-500~ps production run was performed at 353.15~K with a 1.0~fs 
-timestep. Atomic coordinates were written every 1~ps for trajectory 
-analysis.
+The system was brought to equilibrium via five successive NVT steps using a Nos\'{e}--Hoover thermostat along with a secondary velocity-rescaling fix (temp/rescale) applied every 10--100 steps, to avoid kinetic energy blowouts during heating: K from 1 to 10 using a timestep of 0.1~fs over 10~ps; K from 10 to 50 using a timestep of 0.2~fs over 10 ps; K from 50 to 150 using a timestep of 0.5~fs over 25~ps; K from 150 to 353.15~K using a timestep of 1.0 fs over 50 ps; and finally maintained at 353.15~K for 100~ps. The heating strategy used is required for polymer systems in which large velocity gradients present at the beginning of dynamics can be seen to destabilize intranolecular bond forces \cite{104}. After equilibrium the system was taken over 500~ps using 1.0~fs dynamics at 353.15~K, where atomic positions were recorded every 1~ps, and this data analyzed in terms of trajectories.
 
 \subsubsection{Computed Quantities}
 
-Two quantities were extracted from the production trajectory. The 
-mean square displacement (MSD) of phosphorus atoms was computed using 
-the \texttt{compute msd} command with centre-of-mass correction, 
-time-averaged every 100 steps. A bounded MSD — showing no sustained 
-linear growth — indicates that the phosphate group is covalently 
-anchored and not diffusing, which is the expected signature of acid 
-retention. A linearly growing MSD would indicate free diffusion 
-and acid leaching \cite{64}. The radial distribution 
-function g(r) between phosphorus atoms (type~5) and bridging oxygen 
-atoms (type~4) was computed using \texttt{compute rdf} with 100 bins, 
-time-averaged over the full 500~ps production run, to monitor the 
-structural integrity of the P--O--C covalent linkage.
+Two measures were computed from the production run: mean square displacement of the phosphorus atoms-calculated using \texttt{compute msd} taking centre-of-mass correction, time-averaged every 100 steps-and radial distribution function of P atoms with bridging oxygen atoms. A bounded MSD-i.e. One that shows no steady-state growth-reveals that the phosphate group is covalently tethered rather than diffusing, which is characteristic of acid retention. Free diffusion with subsequent leaching of the acid would yield a linearly growing MSD, see \cite{64}.The RDF, g(r) between P atoms and bridging O atoms, using 100 bins and averaged over the full 500~ps production run with \texttt{compute rdf}, was analyzed to monitor the covalent P-O-C linkage integrity:
 
 \subsection{Macroscopic Device Modelling (COMSOL Multiphysics)}
 
 \subsubsection{Model Geometry and Physics}
 
-A two-dimensional single-cell PEMFC model was implemented in COMSOL 
-Multiphysics 6.3 using the Secondary Current Distribution interface, 
-which solves the conservation of ionic and electronic current with 
-Butler--Volmer electrode kinetics. The model geometry consisted of 
-a single membrane domain of thickness 360~\(\mu\)m and width 
-100~\(\mu\)m, bounded by anode and cathode current collector 
-boundaries.
+A 2-D single cell PEMFC model has been developed within COMSOL Multiphysics 6.3 using the Secondary Current Distribution interface, which includes the conservation of ionic and electronic current with Butler-Volmer electrode kinetics. The geometry comprises of a single membrane of size 100~\(\mu\)m 360~\(\mu\)m and boundaries of anode and cathode current collectors.
 
 The membrane domain was governed by:
 
@@ -1260,21 +1040,7 @@ constant, and \(T = 297.15\)~K.
 
 \subsubsection{Input Parameters and Limitations}
 
-The membrane proton conductivity was set to 
-$\sigma_{m} = 41.4\ \mathrm{mS\,cm^{-1}}$, the experimentally 
-measured value for the heat‑treated membrane at $24^{\circ}\text{C}$ 
-and $30\%$ RH (Section~\ref{sec:conductivity}, 
-Table~\ref{tab:conductivity-results}). The membrane thickness was 
-$L = 360\ \mu\text{m}$, matching the sample used in the EIS 
-measurement. With these experimentally determined inputs, the 
-COMSOL model yields a strictly linear polarisation curve and a 
-calculated membrane resistance of $0.278\ \Omega$, which agrees 
-to within $0.7\%$ with the bulk resistance $R_b = 0.276\ \Omega$ 
-obtained from the Nyquist intercept (Section~\ref{sec:conductivity}). 
-This agreement confirms the internal consistency of the multiscale 
-framework and eliminates the need for a literature placeholder. 
-All other boundary conditions and solver settings are documented 
-in Appendix F.
+The membrane proton conductivity was set at $\sigma{m} = 41.4\ \mathrm{mS\,cm^{-1}}$, which was the experimentally determined value of the heat-treated membrane at $24^{\circ}\text{C}$ and $30\%$ RH (section~\ref{sec:conductivity}, table~\ref{tab:conductivity-results}). The membrane thickness was $L = 360\ \mu\text{m}$, which was the thickness of the membrane measured in the EIS experiment. This experiment-based input allows the COMSOL model to generate an perfectly linear polarization curve, the output membrane resistance was $0.278\ \Omega$ and agreed with the bulk resistance obtained from Nyquist intercept $Rb=0.276\ \Omega$ within 0.7% (section~\ref{sec:conductivity}), validating the consistency of the multiscale approach and negating the use of a literature value. The rest of the boundary conditions and solver options used are recorded in appendix F.
 
 \chapter{Experimental Results and Discussion}
 
@@ -1325,7 +1091,7 @@ The S1 membrane, after the 30 minutes doping, has maintained its obviously fibro
 The small swelling that occurs at this time is consistent with the known plasticizing effect of phosphoric acid on such PVA matrices, as the molecules insert themselves between the chains in the amorphous regions of the matrix, breaking the hydrogen bonds between chains that maintain the shape of the fiber, effectively reducing the glass transition temperature locally enough to allow some relaxation of the chains to occur.\cite{35,52} The pore structure remains open at this time, which is important in terms of transport properties – the accessible pore structure maximizes the hydroxyl groups accessible to the doping solution and also allows the phosphoric acid molecules access to the binding sites across the full depth of the membrane, not just the surface.
 
 \subsection{S2 (2 Hours Doping): Progressive Plasticisation and Fibre Coalescence}
-After two hours of doping with the S2 membrane, its shape is very different from the one observed before. The boundaries between the fibers, which were still apparent at the 30-minute mark, begin to crumble, and the fibers next to each other are seen to merge at the points where they touch one another. This is consistent with the increasingly plasticized nature of the PVA matrix due to the phosphoric acid doping. As the phosphoric acid absorbs deeper and deeper into the amorphous regions of the matrix, the glass transition temperature continues to be lowered, allowing the polymer chains to relax and the fibers to merge at the points where they touch one another.\cite{4,35}
+After two hours of doping with the S2 membrane, its shape is very different from the one observed before. The boundaries between the fibers, which were still apparent at the 30-minute mark, progressively merge, and the fibers next to each other are seen to merge at the points where they touch one another. This is consistent with the increasingly plasticized nature of the PVA matrix due to the phosphoric acid doping. As the phosphoric acid absorbs deeper and deeper into the amorphous regions of the matrix, the glass transition temperature continues to be lowered, allowing the polymer chains to relax and the fibers to merge at the points where they touch one another.\cite{4,35}
 
 The network becomes partially collapsed, somewhat porous, but no longer maintains that neat structure of individual fibers that was obtained with the shorter doping time. This change in structure has an immediate electrochemical consequence, as more continuous pathways of acid-rich material form through the thickness of the membrane with the collapse of these fiber boundaries, helping to explain the increase in conductivity observed between S1 and S2 in the EIS results presented in Section 4.4.\cite{52, 58}
 
@@ -1488,7 +1254,7 @@ $4.14\times10^{-2}$ & 41.4 \\
 \end{tabular}
 \end{table}
 
-The as-synthesized membrane is almost an insulator ( $\sigma <0.003\ \text{mS\,cm}^{-1}$). The phosphoric acid absorption increased the conductivity to $7.0\ \text{mS\,cm}^{-1}$, and subsequent heat treatment leads to a 6 fold increase to $41.4\ \text{mS\,cm}^{-1}$. A higher improvement obtained at equivalent phosphoric acid loading can be due to the phosphoric acid redistribution through heat treatment into collective binding states (Section:DFT-Cooperative) and formation of complete proton channels due to fusion of fibrous structures (Section:SEM).
+The as-synthesized membrane is almost an insulator ( $\sigma <0.003\ \text{mS\,cm}^{-1}$). The phosphoric acid absorption increased the conductivity to $7.0\ \text{mS\,cm}^{-1}$, and subsequent heat treatment leads to a six-fold increase to $41.4\ \text{mS\,cm}^{-1}$. A higher improvement obtained at equivalent phosphoric acid loading can be due to the phosphoric acid redistribution through heat treatment into collective binding states (Section:DFT-Cooperative) and formation of complete proton channels due to fusion of fibrous structures (Section:SEM).
 
 \subsection{Comparison with Nafion and Literature}
 
@@ -1633,7 +1399,7 @@ The proton that is mobile has an initial charge of +0.432e when it is free in H\
 \subsubsection{Cooperative Binding — Two H\(_3\)PO\(_4\) Molecules}
 
 \textbf{Total Binding Energy and Cooperative Excess}
-However, when a second molecule of H\(_3\)PO\(_4\) binds with the first, the total binding energy works out to be \(-203.0\) kJ/mol. If we were simply to add these, we would have \(2 \times 78.1 = 156.2\) kJ/mol. This leaves us short by 46.8 kJ/mol, or 23.6 kJ/mol for each additional molecule, which we call the cooperative excess. This means that the second molecule binds 30\% more strongly than the first. Figure 5.3 visually represents all these binding and reaction energies, as described in this study.
+However, when a second molecule of H\(_3\)PO\(_4\) binds with the first, the total binding energy works out to be \(-203.0\) kJ/mol. If we were simply to add these, we would have \(2 \times 78.1 = 156.2\) kJ/mol. This leaves us short by 46.8 kJ/mol, or 23.4 kJ/mol for each additional molecule, which we call the cooperative excess. This means that the second molecule binds 30\% more strongly than the first. Figure 5.3 visually represents all these binding and reaction energies, as described in this study.
 
 \begin{figure}[h!]
 \centering
@@ -1655,11 +1421,11 @@ This is because of the way that the first H\(_3\)PO\(_4\) molecule polarizes the
 \textbf{Connection to Experimental Conductivity Trend}
 
 This cooperative effect provides the molecular basis for the dramatic conductivity enhancement observed experimentally. 
-Immersion of the crosslinked PVA/CA membrane in 30~wt\% H\textsubscript{3}PO\textsubscript{4} without further treatment yields a conductivity of 7.2~mS\,cm\textsuperscript{\(-\)1}, while an identical membrane subjected to heat treatment at 150\textdegree C after immersion reaches 41.5~mS\,cm\textsuperscript{\(-\)1} (Section~4.4.3). 
+Immersion of the crosslinked PVA/CA membrane in 30~wt\% H\textsubscript{3}PO\textsubscript{4} without further treatment yields a conductivity of 7.0~mS\,cm\textsuperscript{\(-\)1}, while an identical membrane subjected to heat treatment at 150\textdegree C after immersion reaches 41.4~mS\,cm\textsuperscript{\(-\)1} (Section~4.4.3). 
 Despite a comparable total acid loading, the heat‑treated membrane achieves a factor‑of‑six higher conductivity. 
-The DFT cooperative binding analysis explains this result: thermal energy during heat treatment allows phosphoric acid molecules to redistribute from isolated single‑site binding positions (binding energy $-$78.1~kJ\,mol\textsuperscript{\(-\)1}$) into cooperative two‑molecule assemblies (combined binding energy $-$203.0~kJ\,mol\textsuperscript{\(-\)1}$). 
+The DFT cooperative binding analysis explains this result: thermal energy during heat treatment allows phosphoric acid molecules to redistribute from isolated single‑site binding positions (binding energy $-78.1$~kJ~mol$^{-1}$) into cooperative two-molecule assemblies (combined binding energy $-203.0$~kJ~mol$^{-1}$). 
 Each additional acid molecule entering a cooperative configuration binds more strongly and forms shorter, more efficient proton relay contacts with lower effective transfer barriers, producing a superlinear conductivity gain. 
-The same cooperative mechanism is consistent with the non‑linear conductivity progression with doping time reported in previous experimental studies of PVA/H\textsubscript{3}PO\textsubscript{4} membranes \cite{57,58}.
+The same cooperative mechanism is consistent with the non‑linear conductivity progression with doping time reported in previous experimental studies of PVA/H$_3$PO$_4$ membranes \cite{57,58}.
 
 \textbf{Structural Manifestation and PVA–PVA Dimer}
 The PVA-PVA dimer bonds contribute \(-34.2\) kJ/mol binding energy, keeping the PVA chains together in the crystalline region of the film. However, when H\(_3\)PO\(_4\) molecules are added during the doping process, these bonds are broken, and the H\(_3\)PO\(_4\) molecules get inserted into the network, as evidenced by the decrease in crystallinity observed in the XRD spectra as the doping time increases (Chapter 4).\cite{31,33} However, these bonds are not broken in the damaging sense but are replaced by the much stronger bonds formed between the H\(_3\)PO\(_4\) and PVA molecules, which are more favorable for proton conduction in the material.
@@ -1684,7 +1450,7 @@ The scan of the Potential Energy Surface follows the proton as it moves from its
 \textbf{Energy Profile and Barrier Height}
 The energy diagram (Figure 5.5) begins at the reactant geometry, with the proton located on the H\(_3\)PO\(_4\) and energy set at zero. As the reaction coordinate progresses, the energy rises smoothly to a single peak at +37.8 kJ/mol when the O-H bond is about 1.405 Å in length. Then, the energy decreases as the proton moves further towards the PVA oxygen. There are no secondary peaks, flat sections, or alternate paths in this diagram. Just a smooth, single-peaked curve.
 
-This 37.8 kJ/mol peak is accessible at room temperatures, since \(kT\) at 25\(^\circ\)C is only about 2.5 kJ/mol. As the temperature is increased to 60-80\(^\circ\)C, this peak becomes easier to traverse, as seen in the rise in conductivity with temperature in the experimental data presented in Section 4.4.3 \cite{72, 73, 92, 93}.
+This 37.8 kJ/mol peak is accessible at room temperatures, since \(kT\) at 25\(^\circ\)C is only about 2.5 kJ/mol. As the temperature is increased to 60-80\(^\circ\)C, this peak becomes easier to traverse, consistent with activation energies of $10$--$21$~kJ~mol$^{-1}$ reported for comparable PVA/H$_3$PO$_4$ systems in the literature [57, 58, 60].
 
 \textbf{Comparison with Literature Values}
 For polybenzimidazole/H\(_3\)PO\(_4\) membranes, DFT calculations have shown that the proton transfer barriers lie in the 10–40 kJ/mol range, depending on the particular donor-acceptor pair. \cite{20,59} The 37.8 kJ/mol value obtained here is well within this range, showing that the PVA–H\(_3\)PO\(_4\) proton transfer is indeed following the Grotthuss hopping as is expected from well-characterized phosphoric acid membrane systems. In the actual membrane, the gas-phase barrier is expected to be lower by an amount that is quantified in Section 5.3.2.
@@ -1774,7 +1540,7 @@ This long-range proton transport in this membrane does not involve the passage o
 \textbf{Temperature-Dependent Free Energy of Activation}
 The energy barriers discussed above are at 0 K, without taking any thermal effects into account. By carrying out a harmonic frequency calculation on the CalcNew2 system, we are able to obtain the thermochemical data necessary to compute the Gibbs free energy of activation, \(\Delta G^{\ddagger}(T)\), at the temperatures of interest.\cite{92, 93}
 
-From the data presented in Table 5.8 and Figure 5.8, the value of \(\Delta G^{\ddagger}\) decreases from 19.5 kJ/mol at 25\(^\circ\)C to 14.1 kJ/mol at 130\(^\circ\)C. This is due to the increasing vibrational entropy of the flexible hydrogen-bond network as the temperature is increased, making the transition state more accessible with increasing temperature. This is in agreement with the experimentally observed proton conductivity that increases with temperature, as evidenced by the EIS Arrhenius data presented in Section 4.4.3.\cite{65, 66, 72, 73}
+From the data presented in Table 5.8 and Figure 5.8, the value of \(\Delta G^{\ddagger}\) decreases from 19.5 kJ/mol at 25\(^\circ\)C to 14.1 kJ/mol at 130\(^\circ\)C. This is due to the increasing vibrational entropy of the flexible hydrogen-bond network as the temperature is increased, making the transition state more accessible with increasing temperature. This trend is qualitatively consistent with the experimentally observed conductivity improvement following heat treatment (Section~4.4), and with activation energies of $10$--$21$~kJ~mol$^{-1}$ reported in the literature for comparable PVA/H$_3$PO$_4$ systems~\cite{57,58,60}.
 
 \begin{table}[h!]
 \centering
@@ -1806,12 +1572,12 @@ The energy barrier is found to be 39.07 kJ/mol when a separate PES scan is perfo
 The electron-withdrawing nature of the ester carbonyl functional groups increases the proton affinity of the PVA acceptor oxygen, thereby stabilizing the transition state.\cite{72, 73, 96} The crosslinking chemistry is seen to play two roles: it not only endows the membrane with mechanical water stability but also facilitates proton transport by dictating the topology through this electronic effect.
 
 \textbf{TST Rate Constants and Predicted Conductivity Trend}
-The rate constants \(k(T)\), as given in Table 5.8, calculated using the Eyring equation \(k = (k_BT/h) \cdot \exp(-\Delta G^{\ddagger}/RT)\),\cite{92,93} increase by a factor of 117 as the temperature is increased from 25\(^\circ\)C to 130\(^\circ\)C. The hopping frequency at ambient conditions is sufficiently fast, on the order of \(1.2 \times 10^8\) s\(^{-1}\), to account for the observed conductivity values when one accounts for the density of active relay sites in the membrane. As the temperature is increased to 80\(^\circ\)C, a typical operating temperature in a PEFC, the rate is increased by a factor of 17.5 relative to that at room temperature, matching improvements in conductivity with temperature.\cite{65,66}
+The rate constants \(k(T)\), as given in Table 5.8, calculated using the Eyring equation \(k = (k_BT/h) \cdot \exp(-\Delta G^{\ddagger}/RT)\),\cite{92,93} increase by a factor of 117 as the temperature is increased from 25\(^\circ\)C to 130\(^\circ\)C. The hopping frequency at ambient conditions is sufficiently fast, on the order of \(1.2 \times 10^8\) s\(^{-1}\), to account for the observed conductivity values when one accounts for the density of active relay sites in the membrane. As the temperature is increased to 80\(^\circ\)C, a typical operating temperature in a PEFC, the rate is increased by a factor of 17.5 relative to that at room temperature, consistent with the conductivity enhancement expected at PEFC operating temperatures, and with literature activation energies for comparable phosphoric acid-doped polymer membranes [57, 58, 60].
 
 
 \section{Full Assembly Model of the Wet Crosslinked Membrane}
 \subsection{Wet Crosslinked Membrane System}
-In sections 5.1 and 5.2, we drew on simple, neat models: just one molecule, just two, or a little chain connecting them. Each calculation focused on a single interaction or event. But the actual membrane is not any one of those things. It’s a messy tangle of polymer chains, with phosphoric acid added in, with water, all at once. In this section, we bring all those strands together. We’ll look at the calculations that create a single model that represents all that complexity: the 65-atom CalcNew2 assembly, and what happens to proton transfer and acid retention when all that complexity is represented in full.
+In sections 5.1 and 5.2, we drew on simple, neat models: just one molecule, just two, or a little chain connecting them. Each calculation focused on a single interaction or event. But the actual membrane is not any one of those things. The actual membrane, however, comprises crosslinked polymer chains, phosphoric acid, and water simultaneously. The CalcNew2 assembly was constructed to represent this full complexity within a tractable finite cluster.
 
 \subsubsection{CalcNew2 — Full 65-Atom Crosslinked Assembly}
 
@@ -1915,7 +1681,7 @@ Crosslinked wet (CalcNew3) & Full 65-atom model & \textbf{19.5} & \textbf{1.343}
 \end{tabular}
 \end{table}
 
-This energy barrier of 19.5 kJ/mol calculated by the CalcNew3 method falls within the range of the experimental EIS values of 10.2–20.9 kJ/mol. Two entirely different techniques have found the same energy barrier for the transport of protons. This is the major result of the entire calculation effort.\cite{65, 66, 72, 73}
+This energy barrier of 19.5 kJ/mol calculated by the CalcNew3 method falls within the range of activation energies of $10.2$--$20.9$~kJ~mol$^{-1}$ reported experimentally for PVA/H$_3$PO$_4$ membranes [57, 58, 60]. Two entirely different techniques have found the same energy barrier for the transport of protons. This is the major result of the entire calculation effort.\cite{65, 66, 72, 73}
 
 \textbf{Product Stability and Thermodynamic Spontaneity}
 The energy level at which the product is situated in step 14 is \(-9.28\) kJ/mol, 9.3 kJ/mol lower than that of the reactant. While this is not so in the gas-phase binary, when the full membrane is used, it is clear that the product is more stable. The reason behind this is that the energy balance is clearly skewed by the fact that the ester carbonyls on the citric acid crosslinker withdraw electron density away from the PVA oxygen acceptor, thereby increasing its proton affinity. The product, namely, PVA-OH, is more stable than the reactant, namely, H\(_3\)PO\(_4\)-O, because of this change in local environment caused by the crosslinker. \cite{72, 73, 96}
@@ -1999,7 +1765,7 @@ The O-H stretching mode has a difference of 109 cm\(^{-1}\), as it was calculate
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.9\linewidth]{DFT PREDICTRED SPECTURM OF CROOSSLINKED WET MEMBRANE.png}
+\includegraphics[width=0.9\linewidth]{DFT PREDICTED SPECTRUM OF CROOSSLINKED WET MEMBRANE.png}
 \caption{DFT PREDICTRED SPECTURM OF CROOSSLINKED WET MEMBRANE}
 \label{fig:dft-ir-spectrum}
 \end{figure}
@@ -2369,12 +2135,21 @@ Cell Voltage, \(V_{\text{cell}}\) (V) & Total Current, \(I_{\text{cell}}\) (A) \
 \end{tabular}
 \end{table}
 
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.75\linewidth]{Untitled.png}
+\caption{COMSOL-predicted polarisation curve of the PVA/CA/H\(_3\)PO\(_4\) membrane cell.}
+\label{fig:comsol-iv}
+\end{figure}
+
 The effective membrane resistance extracted from the slope of the polarisation curve is:
 \begin{equation}
 R = \frac{\Delta V}{\Delta I} = \frac{1.0\text{ V} - 0.2\text{ V}}{3.60\text{ A} - 0.72\text{ A}} = \frac{0.80\text{ V}}{2.88\text{ A}} \approx 0.278\ \Omega
 \end{equation}
 
 The calculated value here matches very closely the bulk resistance Rb=0.276 W calculated from directly from the experimental Nyquist plot (Section 4.4) (less than 1% error). The excellent agreement between these two points and from the experimentally determined (and calculated from EIS and independent physical thickness measurement) conductivity of the membrane, indicates that both values feed properly into the continuum simulation and that the device-scale output from COMSOL truly is simply the one-dimensional ohmic performance (ref 108,111).
+
+
 \section{Integrated Multiscale Correlation}
 
 These three computational levels provide a selfconsistent image of PVA/CA/H\textsubscript{3}PO\textsubscript{4} membrane. The DFT level defines an energy balance: P--O--C covalent bond shows $251.9\ \mathrm{kJ\,mol^{-1}}$ as its desorption barrier (acid loss impossible, thermodynamically speaking) while the $38.2\ \mathrm{kJ\,mol^{-1}}$ barrier for proton transfer for hydrated crosslinked membrane is in accordance to Grotthuss hopping process. These conclusions are confirmed by MD simulation on dynamical scale, as the Patom MSD remains <$1\ \mathrm{\AA^2}$ at $353\ \mathrm{K}$ during $500\ \mathrm{ps}$ and shows it is covalently immobilized, and the RDF profile, with peaks maintained at $4.7$--$4.8$\ \AA, illustrates stable structure of P--O--C connection.
@@ -2387,13 +2162,13 @@ Each level is a source of the next. MD structural stability arises from the DFT 
 
 \section{Summary of Principal Findings}
 
-In this dissertation we sought answers to 3 questions that only experimental characterisation was unable to resolve, why binds to PVA/CA, how protons travel through the PVA/CA and why only approximately a third of incorporated acid remains after water wash. Thirty one DFT calculations at B3LYP-D3BJ/6-31G* using ORCA~6.1.1 alongside classical molecular dynamics and finite element modeling allowed answers to be obtained for all three.
+In this dissertation we sought answers to 3 questions that only experimental characterisation was unable to resolve, why H$_3$PO$_4$ binds to PVA/CA, how protons travel through the PVA/CA and why only approximately a third of incorporated acid remains after water wash. Thirty one DFT calculations at B3LYP-D3BJ/6-31G* using ORCA~6.1.1 alongside classical molecular dynamics and finite element modeling allowed answers to be obtained for all three.
 
 The crosslinking is a thermodynamically favorable process ($\Delta E = -12.4$~kJ\,mol\(^{-1}\)) and the predicted DFT C=O ester frequency at 1720 cm\(^{-1}\) perfectly agrees with the FTIR-ATR experimental measurement. This agreement with no fitting parameters used is the first indication of correct calibration of DFT for this material system.
 
 The phosphoric acid binds to PVA hydroxyl groups with an energy of $-78.1$~kJ\,mol\(^{-1}\), the hydrogen bond formed is only a single and a rather strong one for an O--H$\cdots$O contact in water. However the most interesting is when a second acid molecule binds. Both molecules are not binding independently but their binding energy is increased to $-203.0$~kJ\,mol\(^{-1}\) (which is 46.8~kJ\,mol\(^{-1}\)  more than a simply addition) because the first molecule affects the binding environment of the second and vice-versa. The effect described above is the origin at the molecular level of the non-linear enhancement in conductivity as the doping time increases from 30 min to 24 hours, which has been measured.
 
-We characterized proton transfer via five different and independent calculation methods that all converge to the same value. 37.8~kJ\,mol\(^{-1}\) is predicted by the gas-phase PES scan, which was verified to represent a saddle point on the PES at $\nu^{\ddagger} = -1248$~cm\(^{-1}\) by the transition state optimization calculation. The Nudged Elastic Band calculation is found to reproduce the exact same barrier at the minimum energy path between these two species. At the transition state, the NBO bond order of the donor hydrogen to the donor oxygen is 0.7455, meaning 25.45% of the proton has already moved to the acceptor oxygen while the original bond has only 74.55% integrity remaining. ELF mapping at the transition state geometry also shows an electron depleted channel existing between the lone pairs on the donor and acceptor oxygens - indicating a Grotthuss hop instead of a vehicular hop. In a 65-atom crosslinked wet model, the barrier height decreased to 19.5~kJ\,mol\(^{-1}\).
+We characterized proton transfer via five different and independent calculation methods that all converge to the same value. 37.8~kJ\,mol\(^{-1}\) is predicted by the gas-phase PES scan, which was verified to represent a saddle point on the PES at $\nu^{\ddagger} = -1248$~cm\(^{-1}\) by the transition state optimization calculation. The Nudged Elastic Band calculation is found to reproduce the exact same barrier at the minimum energy path between these two species. At the transition state, the NBO bond order of the donor hydrogen to the donor oxygen is 0.7455, meaning 25.45\% of the proton has already moved to the acceptor oxygen while the original bond has only 74.55\% integrity remaining. ELF mapping at the transition state geometry also shows an electron depleted channel existing between the lone pairs on the donor and acceptor oxygens - indicating a Grotthuss hop instead of a vehicular hop. In a 65-atom crosslinked wet model, the barrier height decreased to 19.5~kJ\,mol\(^{-1}\).
 
  The question of acid retention was solved using two complimentary computations. Hydration stability gave $\Delta G = -278.0$~kJ\,mol\(^{-1}\) for H\(3\)PO\(4\)/water/PVA complex, and therefore that water stabilized the network of cooperative binding rather than destabilized it. The 20 step desorption PES ($+75.9$~kJ\,mol\(^{-1}\)) shows two populations, single sites that water has unbound (66\%) and sites bound cooperatively to which water cannot bind at room temperature (34\%), and matches without any empirical fitting.
 
@@ -2401,7 +2176,7 @@ The eight covalent phosphorylation calculations push the scenario in an interest
 
 Classical molecular dynamics at 353.15~K for 500~ps proved the DFT predictions dynamically. The mean square displacement of the P atom was consistently under 1~\AA\(^2\), three orders of magnitude lower than what free diffusion would predict, and the radial distribution function peak at 4.7--4.8~\AA{} was still present with no degradation observed, proving the P–O–C bond remained structurally intact at fuel cell temperature.
 
-The COMSOL finite element model for the system (with literature conductivity, $\sigma=35~mS\,cm^{-1}$, to be verified by actual EIS experiment) yielded a purely linear polarization curve ($R^2 > 0.999$) and smooth and regular current density streamlines, indicating ohmic-dominated transport in a uniform membrane, and serves as the device-scale closure of the multiscale model.
+The COMSOL finite element model, parameterised with the experimentally measured conductivity of the heat-treated membrane ($\sigma_m = 41.4$~mS~cm$^{-1}$, Section~4.4), yielded a strictly linear polarisation curve ($R^2 > 0.999$) and uniform current density streamlines. The effective membrane resistance from the model ($0.278~\Omega$) agrees with the EIS Nyquist intercept ($0.276~\Omega$) to within $0.7\%$, completing the multiscale validation loop.
 
 \section{Original Contributions to Knowledge}
 
@@ -2419,7 +2194,7 @@ results for this specific material combination.
 \subsection*{Contribution 2 --- Cooperative binding as 
 the molecular origin of non-linear conductivity}
 
-The 23.6~kJ\,mol\(^{-1}\) per-molecule cooperative 
+The 23.4~kJ\,mol\(^{-1}\) per-molecule cooperative 
 enhancement is quantified here for the first time in a 
 PVA-based membrane system. The direct connection between 
 this quantum-mechanical cooperativity and the 
@@ -2478,12 +2253,11 @@ The model structure used is basic; the building block is a PVA molecule dimer cr
 \subsection*{Experimental synthesis of covalently 
 phosphorylated PVA}
 
-The closest subsequent experiment to the covalent phosphorylation calculations is experimental itself. Phosphorylated PVA films have been produced by phosphorylation with phosphoryl chloride in pyridine and H\(_3\)PO\(_4\). The main measurements would be an acid retention test after washing in water; where a value of close to 100% would be expected from DFT against 34% expected from conventionally doped membrane; and the EIS activation energy, where the value would be predicted to be around 38~kJ\,mol\(^{-1}\) if Grotthuss hopping remained after covalent binding.
+The closest subsequent experiment to the covalent phosphorylation calculations is experimental itself. Phosphorylated PVA films have been produced by phosphorylation with phosphoryl chloride in pyridine and H\(_3\)PO\(_4\). The main measurements would be an acid retention test after washing in water; where a value of close to 100\% would be expected from DFT against 34\% expected from conventionally doped membrane; and the EIS activation energy, where the value would be predicted to be around 38~kJ\,mol\(^{-1}\) if Grotthuss hopping remained after covalent binding.
 
 \subsection*{Higher basis set and implicit solvation}
 
-A single point energy calculation at def2-TZVP level on CalcNew2 geometry would be valuable for the comparison with gas phase binding energies reported in chapter~5. Adding implicit solvation with CPCM or SMD would reduce further the gas phase barriers compared with the experimental activation energy and would lower the value for the S3 sample which showed a experimental Ea of 10.2~kJ\,mol\(^{-1}\) just below CalcNew3's Ea of 19.5~kJ\,mol\(^{-1}\).
-
+A single point energy calculation at def2-TZVP level on CalcNew2 geometry would be valuable for the comparison with gas phase binding energies reported in chapter~5. Adding implicit solvation with CPCM or SMD would reduce further the gas phase barriers compared with the experimental activation energy and would lower the value for the S3 doping level, where literature reports $E_a$ values as low as $10.2$~kJ~mol$^{-1}$ [57, 58, 60]
 \subsection*{Ab initio molecular dynamics}
 
 Although we calculate the potential energy surface via static DFT, this yields no information on dynamics. AIMD at the BLYP-D3/DZVP level would yield proton diffusion coefficients comparable directly to conductivity measurements, hopping rates at various temperatures, and an image of how the hydrogen-bond network fluctuates about the static configurations that we compute here. With 65 atoms CalcNew2 is small enough to fit into a university computing cluster.
@@ -2507,7 +2281,7 @@ with molecular answers to all three, plus a computational
 case for how the membrane's principal weakness — acid 
 leaching — could be fixed without touching its conductivity.
 
-The 65-atom CalcNew2/CalcNew3 calculation is the largest proton transfer DFT calculation for any PVA membrane, and the experimental measurement of 34% acid retention matches quantitatively the parameter-free prediction of 34%. The covalent phosphorylation study also provides a concrete synthetic goal: a membrane where the barrier to desorption is 3.3-fold greater than the present one and proton transport is almost unaffected.
+The 65-atom CalcNew2/CalcNew3 calculation is the largest proton transfer DFT calculation for any PVA membrane, and the experimental measurement of 34\% acid retention matches quantitatively the parameter-free prediction of 34\%. The covalent phosphorylation study also provides a concrete synthetic goal: a membrane where the barrier to desorption is 3.3-fold greater than the present one and proton transport is almost unaffected.
 
 None of the above required more than a four-core laptop and free software. The cluster DFT calculation approach if handled properly and cross-referenced at every step with experimental results will provide both quantitative predictions and a mechanistic explanation beyond that achievable with bulk characterization techniques. Whether the covalently phosphorylated membrane is a perfect system or not the framework built within this thesis – linking esterification energetics via cooperative binding via proton transfer barrier via device polarization curve – provides a robust foundation for future rational optimization of such a material class.
 
@@ -3000,7 +2774,7 @@ No. & System & Atoms & Calculation type & Key result & CPU time \\
 8 & PVA–H\(_3\)PO\(_4\) TS & 19 & OptTS + NumFreq & \(\nu^{\ddagger} = -1248\) cm\(^{-1}\), O···H = 1.405 Å & \(\sim\)2 h \\
 9 & Ester product v2 & 30 & Opt & C=O = 1.2281 Å, C–O = 1.3246 Å & \(\sim\)1 h \\
 10 & CHELPG charges & 19 & Single point & P: +2.1e, O: \(-0.9e\) & \(\sim\)30 min \\
-11 & 2\(\times\)H\(_3\)PO\(_4\) + PVA cooperative & 26 & Opt & \(\Delta E = -203.0\) kJ/mol (+23.6 cooperative) & \(\sim\)2 h \\
+11 & 2\(\times\)H\(_3\)PO\(_4\) + PVA cooperative & 26 & Opt & \(\Delta E = -203.0\) kJ/mol (+23.4 cooperative) & \(\sim\)2 h \\
 12 & Water proton scan & 22 & Relaxed scan & Barrier = 39.07 kJ/mol (wet system) & \(\sim\)2 h \\
 13 & PVA–PVA dimer & 24 & Opt & \(\Delta E = -34.2\) kJ/mol & \(\sim\)1 h \\
 14 & ELF mapping & 19 & Single point (property) & ELF corridor at TS confirmed & \(\sim\)1 h \\
@@ -3496,8 +3270,7 @@ fuel cell simulations.
 
 \begin{table}[h]
 \centering
-\caption{Global parameters of the COMSOL PEMFC model (updated with 
-experimental data).}
+\caption{Global parameters of the COMSOL PEMFC model.}
 \label{tab:comsol-global}
 \begin{tabular}{ll}
 \toprule
@@ -3545,7 +3318,7 @@ i_n = i_0 \left[
 \right]
 \end{equation}
 
-with exchange current density \(i_0 = 1 \times 10^{-3}\)~A\,m\(^{-2}\), 
+with exchange current density \(i_0 = 1 \times 10^{-5}\)~A\,m\(^{-2}\), 
 symmetric transfer coefficients \(\alpha_a = \alpha_c = 0.5\), 
 Faraday's constant \(F = 96{,}485\)~C\,mol\(^{-1}\), gas constant 
 \(R = 8.314\)~J\,mol\(^{-1}\)K\(^{-1}\), and temperature 
@@ -3559,7 +3332,7 @@ Faraday's constant \(F = 96{,}485\)~C\,mol\(^{-1}\), gas constant
 \toprule
 Parameter & Symbol & Value \\
 \midrule
-Exchange current density & $i_0$ & $1 \times 10^{-3}$~A\,m$^{-2}$ \\
+Exchange current density & $i_0$ & $1 \times 10^{-5}$~A\,m$^{-2}$ \\
 Anodic transfer coefficient & $\alpha_a$ & 0.5 \\
 Cathodic transfer coefficient & $\alpha_c$ & 0.5 \\
 Faraday's constant & $F$ & 96{,}485~C\,mol$^{-1}$ \\
@@ -3581,7 +3354,7 @@ Boundary & Condition & Value \\
 \midrule
 Anode (bottom) & Butler--Volmer, ground & $\phi_s = 0$~V \\
 Cathode (top) & Butler--Volmer, applied potential & 
-$\phi_s = V_\text{cell}$ \\
+$\phi_s = V_{\text{cell}}$ (swept parameter) \\
 Left and right & Insulation & $\mathbf{n} \cdot 
 \mathbf{i}_m = 0$ \\
 \bottomrule
@@ -3590,14 +3363,50 @@ Left and right & Insulation & $\mathbf{n} \cdot
 
 \section{Mesh and Solver}
 
-The membrane domain was meshed with a mapped quadrilateral 
-mesh of element size 1~\(\mu\)m \(\times\) 1~\(\mu\)m, 
-giving 5{,}000 elements. The stationary solver used a 
-direct PARDISO linear solver with relative tolerance 
-$10^{-6}$. The voltage was swept from 0.2~V to 1.0~V 
-in steps of 0.1~V (nine solution points). Convergence 
-was confirmed by verifying that the global current 
-balance error was below 0.01\% at every voltage step.
+The mesh and solver settings are summarised in Table~\ref{tab:mesh-solver}. 
+Convergence was achieved in one iteration per voltage step, with linear residuals 
+on the order of $10^{-15}$--$10^{-16}$ (see solver log in 
+Appendix~\ref{app:solver-log}), and the global current balance error was below 
+0.01\% at every step.
+
+\begin{table}[h]
+\centering
+\caption{Mesh and solver parameters used in the COMSOL model.}
+\label{tab:mesh-solver}
+\begin{tabular}{ll}
+\toprule
+Parameter & Value \\
+\midrule
+\multicolumn{2}{c}{\hspace*{-2cm}\textbf{Mesh}} \\
+Mesh type & Physics-controlled triangular, ``Finer'' preset \\
+Domain size & $360\;\mu\text{m} \times 100\;\mu\text{m}$ \\
+Number of triangular elements & 556 \\
+Number of vertices & 314 \\
+Number of edge elements & 70 \\
+Total mesh area & $36{,}000\;\mu\text{m}^2$ \\
+Average element quality (skewness) & 0.9148 \\
+Minimum element quality & 0.7245 \\
+\midrule
+\multicolumn{2}{c}{\textbf{Solver and sweep}} \\
+Solver type & Default direct linear solver (automatic) \\
+Relative tolerance & $1 \times 10^{-4}$ \\
+Parametric sweep & $V_{\text{cell}} = 0.2$ to $1.0$ V, step $0.1$ V (9 points) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Solver Log}
+\label{app:solver-log}
+
+The following log excerpt shows convergence behaviour at each voltage step:
+\begin{verbatim}
+Parameter V_cell = 0.2.
+Iter   SolEst   Damping   Stepsize   LinErr   LinRes
+   1     0.81    1.0000      0.81    2.3e-15  2.6e-16
+...
+Parameter V_cell = 1.0.
+   1     0.96    1.0000      0.96    5.0e-15  2.9e-16
+\end{verbatim}
 
 \section{Model Validation}
 
@@ -3609,13 +3418,15 @@ is
 R = \frac{\Delta V}{\Delta I} = \frac{1.0\ \text{V}}{3.60\ \text{A}} 
 \approx 0.278\ \Omega .
 \]
-This value agrees with the bulk resistance \(R_b = 0.276\ \Omega\) 
-obtained from the Nyquist intercept (Section~\ref{sec:conductivity}) 
-to within \(0.7\%\). The near‑perfect match confirms that the 
-independently measured EIS conductivity and membrane thickness 
-are internally consistent and propagate correctly through the 
-continuum model, thereby closing the multiscale validation loop. 
-The model is now fully parameterised with experimental data 
-and no longer relies on literature estimates.
+The agreement between this value and the bulk resistance 
+\(R_b = 0.276\ \Omega\) found from the Nyquist intercept 
+(Section~\ref{sec:conductivity}) is better than \(0.7\%\). 
+This near perfect agreement between these two parameters that 
+have been measured independently via EIS conductivity and 
+membrane thickness indicates the validity of both the internal 
+consistency and the error propagation into the continuum model, 
+which completes the multiscale validation. The continuum model 
+is now parameterized with experimental data and has not used 
+literature data in its construction.
 
 \end{document}
