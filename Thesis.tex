@@ -1008,8 +1008,27 @@ Before any dynamics were performed the system was minimised and bond lengths com
 The system was brought to equilibrium via five successive NVT steps using a Nos\'{e}--Hoover thermostat along with a secondary velocity-rescaling fix (temp/rescale) applied every 10--100 steps, to avoid kinetic energy blowouts during heating: K from 1 to 10 using a timestep of 0.1~fs over 10~ps; K from 10 to 50 using a timestep of 0.2~fs over 10 ps; K from 50 to 150 using a timestep of 0.5~fs over 25~ps; K from 150 to 353.15~K using a timestep of 1.0 fs over 50 ps; and finally maintained at 353.15~K for 100~ps. The heating strategy used is required for polymer systems in which large velocity gradients present at the beginning of dynamics can be seen to destabilize intranolecular bond forces \cite{104}. After equilibrium the system was taken over 500~ps using 1.0~fs dynamics at 353.15~K, where atomic positions were recorded every 1~ps, and this data analyzed in terms of trajectories.
 
 \subsubsection{Computed Quantities}
+Two measures were computed from the production run: mean square displacement of the phosphorus atoms—calculated using \texttt{compute msd} taking centre-of-mass correction, time-averaged every 100 steps—and radial distribution function of P atoms with bridging oxygen atoms. 
 
-Two measures were computed from the production run: mean square displacement of the phosphorus atoms-calculated using \texttt{compute msd} taking centre-of-mass correction, time-averaged every 100 steps-and radial distribution function of P atoms with bridging oxygen atoms. A bounded MSD-i.e. One that shows no steady-state growth-reveals that the phosphate group is covalently tethered rather than diffusing, which is characteristic of acid retention. Free diffusion with subsequent leaching of the acid would yield a linearly growing MSD, see \cite{64}.The RDF, g(r) between P atoms and bridging O atoms, using 100 bins and averaged over the full 500~ps production run with \texttt{compute rdf}, was analyzed to monitor the covalent P-O-C linkage integrity:
+A bounded MSD—i.e., one that shows no steady-state growth—reveals that the phosphate group is covalently tethered rather than diffusing, which is characteristic of acid retention. Free diffusion with subsequent leaching of the acid would instead yield a linearly growing MSD \cite{64}. The time-dependent MSD is calculated via:
+
+\begin{equation}
+\text{MSD}(t) = \langle |\mathbf{r}_i(t) - \mathbf{r}_i(0)|^2 \rangle = \frac{1}{N}\sum_{i=1}^{N} \Big[ (x_i(t)-x_i(0))^2 + (y_i(t)-y_i(0))^2 + (z_i(t)-z_i(0))^2 \Big]
+\end{equation}
+
+where $N$ refers to the number of tracking atoms, $\mathbf{r}_{i}(0)$ is for the initial unfolded configuration, while $\mathbf{r}_{i}(t)$ refers to the positions at simulation time $t$. The diffusion constant $D$ is obtained by plotting the slope of the MSD graph in steady-state using 3-D Einstein equation:
+\begin{equation}
+D = \frac{1}{6} \lim_{t \to \infty} \frac{d}{dt} \Big( \text{MSD}(t) \Big)
+\end{equation}
+
+The RDF, $g(r)$, between P atoms and bridging O atoms, using 100 bins and averaged over the full 500~ps production run with \texttt{compute rdf}, was analyzed to monitor the covalent P–O–C linkage integrity. The pair radial distribution function is expressed mathematically as:
+
+\begin{equation}
+g(r) = \frac{V}{N^2} \left\langle \sum_{i} \sum_{j \neq i} \delta(r - |\mathbf{r}_i - \mathbf{r}_j|) \right\rangle
+\end{equation}
+
+Here, $V$ is the volume of the simulation box, and the brackets indicates an ensemble averaging over the steps in the production run phase. Calculating the integral over the area under the first few coordination shells of $g(r)$ yields the localized coordination numbers. This cross-references the structural stability of the clusters, obtained by means of static quantum mechanical DFT calculations.
+
 
 \subsection{Macroscopic Device Modelling (COMSOL Multiphysics)}
 

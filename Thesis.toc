@@ -1,0 +1,197 @@
+\contentsline {chapter}{Acknowledgments}{1}{chapter*.1}%
+\contentsline {chapter}{List of Abbreviations}{10}{chapter*.5}%
+\contentsline {chapter}{\numberline {1}Introduction}{13}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Literature Review}{16}{chapter.2}%
+\contentsline {section}{\numberline {2.1}The Global Energy landscape and the Role of PEMs}{16}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Decarbonization}{16}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Critical Limitation}{16}{subsection.2.1.2}%
+\contentsline {section}{\numberline {2.2}Fundamentals of Polymeric Proton Conductors}{16}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Morphology of Ionic-Conducting Polymers:}{16}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Proton Transport Theory (Grotthuss vs.Vehicular)}{17}{subsection.2.2.2}%
+\contentsline {section}{\numberline {2.3}Poly(vinyl alcohol)(PVA):Beyond Commodity Applications}{17}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Chemical structure and Functionality}{17}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Semicrystalline Nature of PVA}{19}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Strategies for Water-Stabilisation}{19}{subsection.2.3.3}%
+\contentsline {section}{\numberline {2.4}Advanced Fiber Engineering via Electrospinning}{19}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Electrospinning Physics}{19}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Nanofiber vs. Bulk Film}{21}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.3}Rheological Prerequisites}{21}{subsection.2.4.3}%
+\contentsline {section}{\numberline {2.5}Green Crosslinking Chemistry:The Polycarboxylic Acid Route}{22}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Esterification Kinetics}{22}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}Multi-functional Crosslinkers}{22}{subsection.2.5.2}%
+\contentsline {subsection}{\numberline {2.5.3}Thermal Activation}{22}{subsection.2.5.3}%
+\contentsline {section}{\numberline {2.6}Acid based doping and Membrane Functionalization}{23}{section.2.6}%
+\contentsline {subsection}{\numberline {2.6.1}Phosphoric Acid (H\(_3\)PO\(_4\)) as a Liquid Electrolyte}{23}{subsection.2.6.1}%
+\contentsline {subsection}{\numberline {2.6.2}Acid-Polymer Interactions}{23}{subsection.2.6.2}%
+\contentsline {subsection}{\numberline {2.6.3}The Plasticisation Effect of Phosphoric Acid}{24}{subsection.2.6.3}%
+\contentsline {section}{\numberline {2.7}Computational Modeling of Proton Exchange Membranes}{25}{section.2.7}%
+\contentsline {subsection}{\numberline {2.7.1}Density Functional Theory in Membrane Science}{25}{subsection.2.7.1}%
+\contentsline {subsection}{\numberline {2.7.2}Published DFT Studies: Nafion, SPEEK, and PBI–H\(_3\)PO\(_4\)}{25}{subsection.2.7.2}%
+\contentsline {subsection}{\numberline {2.7.3}Molecular Dynamics Simulations of Proton Transport}{25}{subsection.2.7.3}%
+\contentsline {subsection}{\numberline {2.7.4}Molecular Dynamics Simulations of Proton Transport in PEMs}{26}{subsection.2.7.4}%
+\contentsline {subsection}{\numberline {2.7.5}Finite Element Analysis for Fuel Cell Performance Prediction}{26}{subsection.2.7.5}%
+\contentsline {subsection}{\numberline {2.7.6}The Computational Gap: PVA/CA/H\(_3\)PO\(_4\)}{27}{subsection.2.7.6}%
+\contentsline {section}{\numberline {2.8}Characterization Techniques in Membrane Science}{28}{section.2.8}%
+\contentsline {subsection}{\numberline {2.8.1}Spectroscopic Analysis (FTIR)}{28}{subsection.2.8.1}%
+\contentsline {subsection}{\numberline {2.8.2}Structural Analysis (XRD and SEM)}{28}{subsection.2.8.2}%
+\contentsline {subsection}{\numberline {2.8.3}Electrochemical Impedance Spectroscopy}{28}{subsection.2.8.3}%
+\contentsline {section}{\numberline {2.9}Research Gap and Scope}{29}{section.2.9}%
+\contentsline {chapter}{\numberline {3}Methodology (Experimental and Computational)}{30}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Materials and reagents}{30}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Polymer matrix:}{30}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Citric Acid}{30}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}Phosphoric acid}{30}{subsection.3.1.3}%
+\contentsline {subsection}{\numberline {3.1.4}Solvent system}{30}{subsection.3.1.4}%
+\contentsline {section}{\numberline {3.2}Preparation and Rheological Characterization}{31}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Solution Stoichiometry}{31}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Dissolution Kinetics}{31}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Optimisation of Concentration}{31}{subsection.3.2.3}%
+\contentsline {section}{\numberline {3.3}Nanofabrication via Needle-Based Electrospinning}{32}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Electrospinning Instrumentation}{32}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Parameter Control}{32}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Environment Monitoring}{32}{subsection.3.3.3}%
+\contentsline {section}{\numberline {3.4}Pre crosslinking}{33}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Thermal Treatment Protocol}{33}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Chemical Mechanism of Esterification}{33}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Mass Balance Quantification}{33}{subsection.3.4.3}%
+\contentsline {section}{\numberline {3.5}Membrane Functionalisation (Acid Doping)}{34}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Doping Solution Preparation}{34}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Kinetic Study of Acid Uptake}{34}{subsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.5.3}Structural Integrity Limits}{34}{subsection.3.5.3}%
+\contentsline {section}{\numberline {3.6}Analytical Characterization Techniques}{34}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}Morphological Analysis (SEM)}{34}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.6.2}Chemical Footprint (FTIR-ATR)}{35}{subsection.3.6.2}%
+\contentsline {subsection}{\numberline {3.6.3}Surface Wettability (Contact Angle)}{35}{subsection.3.6.3}%
+\contentsline {subsection}{\numberline {3.6.4}Electrochemical Impedance Spectroscopy (EIS)}{36}{subsection.3.6.4}%
+\contentsline {section}{\numberline {3.7}Computational Implementation}{36}{section.3.7}%
+\contentsline {subsection}{\numberline {3.7.1}Theoretical Foundation: Density Functional Theory}{36}{subsection.3.7.1}%
+\contentsline {subsection}{\numberline {3.7.2}Choice of Functional: B3LYP and Justification}{37}{subsection.3.7.2}%
+\contentsline {subsection}{\numberline {3.7.3}Dispersion Correction: Grimme D3BJ}{37}{subsection.3.7.3}%
+\contentsline {subsection}{\numberline {3.7.4}Basis Set: 6-31G*}{37}{subsection.3.7.4}%
+\contentsline {subsection}{\numberline {3.7.5}Software: ORCA 6.1.1}{37}{subsection.3.7.5}%
+\contentsline {subsection}{\numberline {3.7.6}Molecular Models: PVA Monomer, CA, H\(_3\)PO\(_4\), and Crosslinked Units}{38}{subsection.3.7.6}%
+\contentsline {subsection}{\numberline {3.7.7}Calculations:Geometry Optimisation, PES Scan, TS, NBO, ELF, and NEB}{38}{subsection.3.7.7}%
+\contentsline {subsection}{\numberline {3.7.8}Binding Energy, Frequency Scaling, and BSSE Correction}{39}{subsection.3.7.8}%
+\contentsline {subsection}{\numberline {3.7.9}Limitations of the Gas-Phase DFT Approach}{39}{subsection.3.7.9}%
+\contentsline {subsection}{\numberline {3.7.10}Covalent Phosphorylation Study: Computational Design of a Leach-Proof Membrane}{39}{subsection.3.7.10}%
+\contentsline {subsubsection}{Motivation and Scope}{39}{subsubsection*.19}%
+\contentsline {subsubsection}{Model Construction}{40}{subsubsection*.20}%
+\contentsline {subsubsection}{Calculations Performed}{40}{subsubsection*.21}%
+\contentsline {subsubsection}{Desorption and Proton Transfer Scans}{40}{subsubsection*.23}%
+\contentsline {subsubsection}{Electronic Analysis}{41}{subsubsection*.24}%
+\contentsline {subsubsection}{Full Membrane Model}{41}{subsubsection*.25}%
+\contentsline {subsubsection}{Limitations}{41}{subsubsection*.26}%
+\contentsline {subsection}{\numberline {3.7.11}Molecular Dynamics Setup (LAMMPS)}{41}{subsection.3.7.11}%
+\contentsline {subsubsection}{Force Field and System Construction}{42}{subsubsection*.27}%
+\contentsline {subsubsection}{Force Field Validation}{42}{subsubsection*.28}%
+\contentsline {subsubsection}{Equilibration and Production Protocol}{42}{subsubsection*.29}%
+\contentsline {subsubsection}{Computed Quantities}{43}{subsubsection*.30}%
+\contentsline {subsection}{\numberline {3.7.12}Macroscopic Device Modelling (COMSOL Multiphysics)}{43}{subsection.3.7.12}%
+\contentsline {subsubsection}{Model Geometry and Physics}{43}{subsubsection*.31}%
+\contentsline {subsubsection}{Input Parameters and Limitations}{44}{subsubsection*.32}%
+\contentsline {chapter}{\numberline {4}Experimental Results and Discussion}{45}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Scanning Electron Microscopy (SEM)}{45}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Quantitative Fiber Diameter Distribution}{45}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Membrane Morphology Evolution — SEM Analysis}{45}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.1.3}S0 (Undoped Membrane): Pristine Nanofibrous Topology}{45}{subsection.4.1.3}%
+\contentsline {subsection}{\numberline {4.1.4}S1 (30 Minutes Doping): Early Surface Swelling and Acid Uptake}{46}{subsection.4.1.4}%
+\contentsline {subsection}{\numberline {4.1.5}S2 (2 Hours Doping): Progressive Plasticisation and Fibre Coalescence}{47}{subsection.4.1.5}%
+\contentsline {subsection}{\numberline {4.1.6}S3 (24 Hours Doping): Complete Fibre Fusion and Dense Film Formation}{47}{subsection.4.1.6}%
+\contentsline {section}{\numberline {4.2}Fourier Transform Infrared Spectroscopy (FTIR)}{48}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Chemical Confirmation of Crosslinking and Acid Incorporation — FTIR-ATR}{48}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Uncrosslinked PVA-CA Baseline}{48}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Crosslinking Confirmed — Ester Peak at 1720 cm\(^{-1}\)}{49}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.4}H\(_3\)PO\(_4\) Incorporation}{49}{subsection.4.2.4}%
+\contentsline {subsection}{\numberline {4.2.5}Acid Retention After Water Washing}{49}{subsection.4.2.5}%
+\contentsline {section}{\numberline {4.3}Surface Wettability}{50}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Surface Wettability — Contact Angle Analysis}{50}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Uncrosslinked PVA-CA ($\theta = 75.0^\circ $)}{50}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Crosslinked PVA-CA ($\theta = 83.5^\circ $)}{50}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.4}H$_3$PO$_4$-Doped Membrane ($\theta = 50.6^\circ $)}{51}{subsection.4.3.4}%
+\contentsline {section}{\numberline {4.4}Conductivity}{52}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Proton Conductivity and Electrochemical Performance}{52}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Bulk Resistance and Equivalent Circuit Fitting}{52}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}Proton Conductivity Results}{53}{subsection.4.4.3}%
+\contentsline {subsection}{\numberline {4.4.4}Comparison with Nafion and Literature}{53}{subsection.4.4.4}%
+\contentsline {subsection}{\numberline {4.4.5}Note on Temperature‑Dependent Measurements}{53}{subsection.4.4.5}%
+\contentsline {subsection}{\numberline {4.4.6}Non‑Linear Conductivity Enhancement: Molecular Interpretation}{53}{subsection.4.4.6}%
+\contentsline {chapter}{\numberline {5}Computational Results and Discussion}{55}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Thermodynamics}{55}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Thermodynamics of Crosslinking and Acid Binding}{55}{subsection.5.1.1}%
+\contentsline {subsubsection}{Baseline Molecular Geometries of Isolated Components}{55}{subsubsection*.41}%
+\contentsline {subsubsection}{Esterification Energy and Crosslink Formation}{56}{subsubsection*.44}%
+\contentsline {subsubsection}{H\(_3\)PO\(_4\) Binding to PVA — Single-Site Interaction}{57}{subsubsection*.46}%
+\contentsline {subsubsection}{Cooperative Binding — Two H\(_3\)PO\(_4\) Molecules}{58}{subsubsection*.48}%
+\contentsline {subsubsection}{Hydration Stability — Why Acid Is Retained}{60}{subsubsection*.51}%
+\contentsline {section}{\numberline {5.2}Proton Transport}{60}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Proton Transport Mechanism}{60}{subsection.5.2.1}%
+\contentsline {subsubsection}{Gas-Phase Potential Energy Surface Scan}{61}{subsubsection*.52}%
+\contentsline {subsubsection}{Transition State Characterisation}{61}{subsubsection*.54}%
+\contentsline {subsubsection}{Nudged Elastic Band Calculation}{62}{subsubsection*.55}%
+\contentsline {subsubsection}{Natural Bond Orbital Analysis}{63}{subsubsection*.56}%
+\contentsline {subsubsection}{Electron Localisation Function Mapping}{63}{subsubsection*.58}%
+\contentsline {subsubsection}{PVA Trimer Relay Chain}{64}{subsubsection*.60}%
+\contentsline {subsubsection}{Temperature and Hydration Effects on Proton Transfer}{65}{subsubsection*.61}%
+\contentsline {section}{\numberline {5.3}Full Assembly Model of the Wet Crosslinked Membrane}{67}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Wet Crosslinked Membrane System}{67}{subsection.5.3.1}%
+\contentsline {subsubsection}{CalcNew2 — Full 65-Atom Crosslinked Assembly}{67}{subsubsection*.64}%
+\contentsline {subsubsection}{CalcNew3 — Proton Transfer in the Crosslinked Wet System}{68}{subsubsection*.67}%
+\contentsline {subsubsection}{H\(_3\)PO\(_4\) Desorption PES — Molecular Origin of Acid Retention}{70}{subsubsection*.71}%
+\contentsline {subsection}{\numberline {5.3.2}Integrated DFT–Experiment Correlation}{71}{subsection.5.3.2}%
+\contentsline {subsubsection}{FTIR Validation}{71}{subsubsection*.73}%
+\contentsline {section}{\numberline {5.4}Post-Treatment Conductivity and Thermodynamic Correlation}{73}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Cooperative Binding and Room-Temperature Conductivity Enhancement}{73}{subsection.5.4.1}%
+\contentsline {subsubsection}{Acid Retention — DFT Prediction vs Experimental Measurement}{74}{subsubsection*.76}%
+\contentsline {subsubsection}{Three Independent Proofs of the Grotthuss Mechanism}{75}{subsubsection*.77}%
+\contentsline {section}{\numberline {5.5}Covalent Phosphorylation: A Computational Route to Eliminating Acid Leaching}{75}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}Desorption Energetics: Covalent versus Non-Covalent Binding}{75}{subsection.5.5.1}%
+\contentsline {subsection}{\numberline {5.5.2}Proton Donor Activity After Covalent Anchoring}{77}{subsection.5.5.2}%
+\contentsline {subsection}{\numberline {5.5.3}Proton Transfer Barrier in the Covalent System}{77}{subsection.5.5.3}%
+\contentsline {subsection}{\numberline {5.5.4}Behaviour in the 62-Atom Covalent Membrane Model}{78}{subsection.5.5.4}%
+\contentsline {subsection}{\numberline {5.5.5}Implications for Membrane Design}{79}{subsection.5.5.5}%
+\contentsline {section}{\numberline {5.6}Molecular Dynamics Results (LAMMPS)}{80}{section.5.6}%
+\contentsline {subsection}{\numberline {5.6.1}Structural Analysis: Radial Distribution Function}{80}{subsection.5.6.1}%
+\contentsline {subsection}{\numberline {5.6.2}Transport Kinetics: Mean Square Displacement and Acid Retention}{80}{subsection.5.6.2}%
+\contentsline {section}{\numberline {5.7}Macroscopic Device Performance (COMSOL)}{81}{section.5.7}%
+\contentsline {subsection}{\numberline {5.7.1}Electrolyte Potential Distribution and Current Density Mapping}{81}{subsection.5.7.1}%
+\contentsline {subsection}{\numberline {5.7.2}Polarisation Curve and Cell Potential Response}{82}{subsection.5.7.2}%
+\contentsline {section}{\numberline {5.8}Integrated Multiscale Correlation}{83}{section.5.8}%
+\contentsline {chapter}{\numberline {6}Conclusions and Future Work}{85}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Summary of Principal Findings}{85}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Original Contributions to Knowledge}{86}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Limitations of the Present Study}{87}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Recommendations for Future Work}{87}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Closing Statement}{88}{section.6.5}%
+\contentsline {chapter}{\numberline {A}ORCA Input Files (Selected Calculations)}{99}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Calculation 1 — H\(_3\)PO\(_4\) Geometry Optimisation}{99}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Calculation 8 — Proton Transfer Transition State Optimisation}{99}{section.A.2}%
+\contentsline {section}{\numberline {A.3}Calculation 15 — Nudged Elastic Band (NEB)}{100}{section.A.3}%
+\contentsline {section}{\numberline {A.4}Calculation 22 — CalcNew2: Full 65-Atom Crosslinked Wet Assembly}{101}{section.A.4}%
+\contentsline {section}{\numberline {A.5}Calculation 23 — CalcNew3: Proton Transfer PES in Full Crosslinked Wet System}{103}{section.A.5}%
+\contentsline {chapter}{\numberline {B}Complete Calculation Summary}{105}{appendix.B}%
+\contentsline {chapter}{\numberline {C}Cartesian Coordinates of Key Optimised Geometries}{106}{appendix.C}%
+\contentsline {section}{\numberline {C.1}Optimised H\(_3\)PO\(_4\) Geometry}{106}{section.C.1}%
+\contentsline {section}{\numberline {C.2}Optimised Isopropanol Geometry (PVA Monomer Model)}{106}{section.C.2}%
+\contentsline {section}{\numberline {C.3}Optimised PVA–H\(_3\)PO\(_4\) Complex Geometry}{106}{section.C.3}%
+\contentsline {section}{\numberline {C.4}Proton Transfer Transition State Geometry}{107}{section.C.4}%
+\contentsline {section}{\numberline {C.5}CalcNew2 — Full 65-Atom Crosslinked Wet Assembly (Converged)}{108}{section.C.5}%
+\contentsline {chapter}{\numberline {D}EIS Data and Equivalent Circuit Parameters}{110}{appendix.D}%
+\contentsline {section}{\numberline {D.1}Equivalent Circuit Model and Fitting}{110}{section.D.1}%
+\contentsline {section}{\numberline {D.2}Nyquist Plots}{110}{section.D.2}%
+\contentsline {section}{\numberline {D.3}Bode Plots}{110}{section.D.3}%
+\contentsline {chapter}{\numberline {E}LAMMPS Simulation Parameters and Input Scripts}{112}{appendix.E}%
+\contentsline {section}{\numberline {E.1}Global Simulation Parameters}{112}{section.E.1}%
+\contentsline {section}{\numberline {E.2}Atom Type Definitions (OPLS-AA)}{112}{section.E.2}%
+\contentsline {section}{\numberline {E.3}Force Field Validation Against DFT}{112}{section.E.3}%
+\contentsline {section}{\numberline {E.4}Heating Protocol}{112}{section.E.4}%
+\contentsline {section}{\numberline {E.5}Key LAMMPS Input Script (Production Run)}{112}{section.E.5}%
+\contentsline {section}{\numberline {E.6}MD Results Summary}{115}{section.E.6}%
+\contentsline {chapter}{\numberline {F}COMSOL Multiphysics Model: Setup and Boundary Conditions}{116}{appendix.F}%
+\contentsline {section}{\numberline {F.1}Model Overview}{116}{section.F.1}%
+\contentsline {section}{\numberline {F.2}Governing Equations}{116}{section.F.2}%
+\contentsline {subsection}{\numberline {F.2.1}Membrane Domain}{116}{subsection.F.2.1}%
+\contentsline {subsection}{\numberline {F.2.2}Electrode Boundaries}{116}{subsection.F.2.2}%
+\contentsline {section}{\numberline {F.3}Boundary Conditions}{117}{section.F.3}%
+\contentsline {section}{\numberline {F.4}Mesh and Solver}{117}{section.F.4}%
+\contentsline {section}{\numberline {F.5}Solver Log}{117}{section.F.5}%
+\contentsline {section}{\numberline {F.6}Model Validation}{118}{section.F.6}%
